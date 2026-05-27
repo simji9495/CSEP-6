@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>글로벌 광고 문화적 지뢰 회피 가이드 — 8개국 통합판</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=DM+Serif+Display&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  --bg:        #0d0f14;
+  --bg2:       #13161e;
+  --bg3:       #1a1e28;
+  --border:    #252b38;
+  --border2:   #2e3545;
+  --text:      #e2e8f0;
+  --text2:     #94a3b8;
+  --text3:     #64748b;
+  --accent:    #3b82f6;
+  --gold:      #f59e0b;
+  --red:       #ef4444;
+  --orange:    #f97316;
+  --green:     #22c55e;
+  --teal:      #14b8a6;
+  --purple:    #a855f7;
+  --pink:      #ec4899;
+  --r: 8px;
+  --r2: 12px;
+  --r3: 16px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* ── HEADER ─────────────────────────────────────────────────── */
+.site-header {
+  background: linear-gradient(135deg, #0d1117 0%, #131a2e 50%, #0d1117 100%);
+  border-bottom: 1px solid var(--border);
+  padding: 48px 32px 36px;
+  position: relative;
+  overflow: hidden;
+}
+.site-header::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 60% 80% at 50% -20%, rgba(59,130,246,.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+.header-inner { max-width: 1200px; margin: 0 auto; position: relative; }
+.header-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; font-weight: 500;
+  color: var(--accent); letter-spacing: .14em; text-transform: uppercase;
+  margin-bottom: 12px;
+  display: flex; align-items: center; gap: 8px;
+}
+.header-eyebrow::before { content:''; width:24px; height:1px; background:var(--accent); }
+.site-header h1 {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(26px, 4vw, 40px);
+  font-weight: 400;
+  line-height: 1.15;
+  color: #f1f5f9;
+  margin-bottom: 10px;
+}
+.site-header h1 em { font-style: normal; color: var(--gold); }
+.header-sub {
+  color: var(--text2); font-size: 14px;
+  display: flex; flex-wrap: wrap; gap: 16px; align-items: center;
+  margin-top: 20px;
+}
+.header-badge {
+  display: inline-flex; align-items: center; gap: 5px;
+  background: rgba(59,130,246,.1);
+  border: 1px solid rgba(59,130,246,.25);
+  color: #93c5fd; font-size: 11px; font-weight: 500;
+  padding: 3px 10px; border-radius: 20px;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* ── NAV TABS ────────────────────────────────────────────────── */
+.tab-bar {
+  background: var(--bg2);
+  border-bottom: 1px solid var(--border);
+  position: sticky; top: 0; z-index: 50;
+  overflow-x: auto; overflow-y: hidden;
+  scrollbar-width: none;
+}
+.tab-bar::-webkit-scrollbar { display: none; }
+.tab-list {
+  display: flex; align-items: stretch;
+  max-width: 1200px; margin: 0 auto;
+  padding: 0 16px;
+  min-width: max-content;
+}
+.tab-btn {
+  padding: 0 18px; height: 48px;
+  background: none; border: none;
+  border-bottom: 2px solid transparent;
+  color: var(--text3); font-size: 13px; font-weight: 500;
+  font-family: 'Noto Sans KR', sans-serif;
+  cursor: pointer; white-space: nowrap;
+  display: flex; align-items: center; gap: 7px;
+  transition: color .18s, border-color .18s;
+}
+.tab-btn:hover { color: var(--text2); }
+.tab-btn.active { color: var(--text); border-bottom-color: var(--accent); }
+.tab-flag { font-size: 16px; line-height: 1; }
+
+/* ── MAIN LAYOUT ─────────────────────────────────────────────── */
+.main { max-width: 1200px; margin: 0 auto; padding: 32px 24px 80px; }
+.section { display: none; }
+.section.active { display: block; }
+
+/* ── SOURCE GRID (section 0) ─────────────────────────────────── */
+.source-intro {
+  color: var(--text2); font-size: 14px; line-height: 1.7;
+  margin-bottom: 28px; max-width: 800px;
+}
+.source-flow {
+  background: linear-gradient(135deg, rgba(59,130,246,.06), rgba(20,184,166,.06));
+  border: 1px solid rgba(59,130,246,.2);
+  border-radius: var(--r3);
+  padding: 18px 22px;
+  font-size: 13px; color: var(--text2);
+  margin-bottom: 28px;
+  display: flex; flex-wrap: wrap; align-items: center; gap: 6px;
+}
+.source-flow strong { color: var(--accent); }
+.flow-arrow { color: var(--text3); font-size: 12px; }
+.source-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+}
+.src-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--r3);
+  padding: 20px;
+  position: relative; overflow: hidden;
+  transition: border-color .2s, transform .2s;
+}
+.src-card:hover { border-color: var(--border2); transform: translateY(-2px); }
+.src-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 3px;
+  border-radius: var(--r3) var(--r3) 0 0;
+}
+.src-card.blue::before  { background: var(--accent); }
+.src-card.teal::before  { background: var(--teal); }
+.src-card.gold::before  { background: var(--gold); }
+.src-card.red::before   { background: var(--red); }
+.src-card.purple::before{ background: var(--purple); }
+.src-card.green::before { background: var(--green); }
+.src-name { font-weight: 700; font-size: 14px; color: #f1f5f9; margin-bottom: 3px; }
+.src-type { font-size: 11px; color: var(--text3); font-family: 'JetBrains Mono', monospace; margin-bottom: 12px; }
+.src-uses { display: flex; flex-direction: column; gap: 5px; }
+.src-use { font-size: 12.5px; color: var(--text2); display: flex; gap: 7px; }
+.src-use::before { content: '›'; color: var(--text3); flex-shrink: 0; }
+.src-when {
+  margin-top: 12px; padding-top: 12px;
+  border-top: 1px solid var(--border);
+  font-size: 11.5px; color: var(--text3);
+}
+.src-when strong { color: var(--text2); }
+
+/* ── COUNTRY SECTION ─────────────────────────────────────────── */
+.country-hero {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--r3);
+  padding: 24px 28px;
+  margin-bottom: 24px;
+  display: flex; align-items: flex-start; gap: 20px;
+  position: relative; overflow: hidden;
+}
+.country-hero::after {
+  content: attr(data-flag);
+  position: absolute; right: 24px; top: 50%;
+  transform: translateY(-50%);
+  font-size: 80px; opacity: .06;
+  pointer-events: none; line-height: 1;
+}
+.country-flag { font-size: 44px; flex-shrink: 0; }
+.country-info h2 { font-size: 22px; font-weight: 700; color: #f1f5f9; margin-bottom: 4px; }
+.country-info .regulators {
+  font-size: 12px; color: var(--text3);
+  font-family: 'JetBrains Mono', monospace;
+  margin-bottom: 10px;
+}
+.country-tagline { font-size: 13.5px; color: var(--text2); line-height: 1.6; max-width: 680px; }
+.hofstede-bar {
+  display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px;
+}
+.hof-chip {
+  font-size: 11px; font-family: 'JetBrains Mono', monospace;
+  padding: 2px 9px; border-radius: 4px;
+  background: rgba(255,255,255,.05); color: var(--text3);
+  border: 1px solid var(--border);
+}
+.hof-chip span { color: var(--text2); font-weight: 500; }
+
+/* ── SUBSECTION TITLES ─────────────────────────────────────────── */
+.sub-title {
+  font-size: 13px; font-weight: 700;
+  color: var(--text3); text-transform: uppercase; letter-spacing: .1em;
+  margin: 28px 0 14px;
+  display: flex; align-items: center; gap: 10px;
+}
+.sub-title::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+/* ── REGULATOR TABLE ─────────────────────────────────────────── */
+.reg-table { width: 100%; border-collapse: collapse; margin-bottom: 4px; }
+.reg-table th {
+  background: var(--bg3);
+  color: var(--text3); font-size: 11px; text-transform: uppercase; letter-spacing: .08em;
+  padding: 10px 14px; text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+.reg-table td {
+  padding: 11px 14px; font-size: 13px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+.reg-table tr:last-child td { border-bottom: none; }
+.reg-table tr:hover td { background: rgba(255,255,255,.02); }
+.reg-table td:first-child { font-weight: 600; color: #f1f5f9; white-space: nowrap; }
+.reg-table td:nth-child(2) { color: var(--text2); }
+.reg-table td:last-child { color: var(--text3); font-size: 12px; }
+.reg-wrap {
+  background: var(--bg2); border: 1px solid var(--border);
+  border-radius: var(--r2); overflow: hidden;
+}
+
+/* ── PITFALL TABLE ───────────────────────────────────────────── */
+.pit-grid { display: flex; flex-direction: column; gap: 8px; }
+.pit-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--r2);
+  padding: 14px 16px;
+  display: grid;
+  grid-template-columns: 28px 1fr auto;
+  gap: 0 12px;
+  align-items: start;
+  transition: border-color .18s;
+}
+.pit-card:hover { border-color: var(--border2); }
+.pit-icon { font-size: 16px; padding-top: 1px; }
+.pit-body {}
+.pit-name { font-weight: 600; font-size: 13.5px; color: #f1f5f9; margin-bottom: 4px; }
+.pit-desc { font-size: 12.5px; color: var(--text2); line-height: 1.55; }
+.pit-tag {
+  font-size: 10.5px; font-family: 'JetBrains Mono', monospace;
+  padding: 2px 8px; border-radius: 4px;
+  background: rgba(255,255,255,.05); color: var(--text3);
+  border: 1px solid var(--border);
+  white-space: nowrap; align-self: start; margin-top: 2px;
+}
+.pit-card.ban  { border-left: 3px solid var(--red); }
+.pit-card.warn { border-left: 3px solid var(--gold); }
+.pit-card.note { border-left: 3px solid var(--accent); }
+
+/* ── CASE TABLE ──────────────────────────────────────────────── */
+.case-grid { display: flex; flex-direction: column; gap: 8px; }
+.case-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--r2);
+  padding: 14px 16px;
+  display: grid; grid-template-columns: 1fr auto;
+  gap: 8px;
+}
+.case-title { font-weight: 600; font-size: 13px; color: #f1f5f9; margin-bottom: 5px; }
+.case-body { font-size: 12.5px; color: var(--text2); line-height: 1.55; }
+.case-verdict {
+  font-size: 11px; font-family: 'JetBrains Mono', monospace;
+  padding: 3px 9px; border-radius: 4px; align-self: start;
+  white-space: nowrap;
+}
+.v-ban    { background: rgba(239,68,68,.12);  color: #fca5a5; border: 1px solid rgba(239,68,68,.25); }
+.v-warn   { background: rgba(245,158,11,.12); color: #fcd34d; border: 1px solid rgba(245,158,11,.25); }
+.v-fine   { background: rgba(168,85,247,.12); color: #d8b4fe; border: 1px solid rgba(168,85,247,.25); }
+.v-note   { background: rgba(59,130,246,.12); color: #93c5fd; border: 1px solid rgba(59,130,246,.25); }
+
+/* ── HIST TABLE (NEW) ────────────────────────────────────────── */
+.hist-grid { display: flex; flex-direction: column; gap: 8px; }
+.hist-card {
+  background: rgba(127,63,0,.08);
+  border: 1px solid rgba(249,115,22,.2);
+  border-left: 3px solid var(--orange);
+  border-radius: var(--r2);
+  padding: 14px 16px;
+  display: grid; grid-template-columns: 110px 1fr 1fr; gap: 0 16px;
+}
+.hist-date {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11.5px; font-weight: 600;
+  color: var(--orange);
+  line-height: 1.4;
+}
+.hist-event { font-weight: 600; font-size: 13px; color: #f1f5f9; margin-bottom: 4px; }
+.hist-desc { font-size: 12.5px; color: var(--text2); line-height: 1.55; }
+.hist-note { font-size: 12px; color: var(--text3); line-height: 1.5; }
+.hist-section-label {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 12px; font-weight: 600; color: var(--orange);
+  text-transform: uppercase; letter-spacing: .08em;
+  margin: 28px 0 14px;
+}
+.hist-section-label svg { flex-shrink:0; }
+.hist-section-label::after { content:''; flex:1; height:1px; background: rgba(249,115,22,.25); }
+
+/* ── STARBUCKS CALLOUT ───────────────────────────────────────── */
+.callout-box {
+  background: rgba(239,68,68,.07);
+  border: 1px solid rgba(239,68,68,.3);
+  border-left: 4px solid var(--red);
+  border-radius: var(--r2);
+  padding: 16px 18px; margin-bottom: 14px;
+}
+.callout-box .callout-head {
+  font-weight: 700; font-size: 13px; color: #fca5a5;
+  display: flex; align-items: center; gap: 6px; margin-bottom: 7px;
+}
+.callout-box p { font-size: 12.5px; color: var(--text2); line-height: 1.6; }
+.callout-box .quote {
+  font-style: italic; color: #fcd34d;
+  padding: 6px 12px; margin: 8px 0;
+  border-left: 2px solid var(--gold);
+  font-size: 12.5px;
+}
+
+/* ── CHECKLIST ───────────────────────────────────────────────── */
+.chk-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px; margin-top: 4px;
+}
+.chk-col {
+  background: var(--bg2); border: 1px solid var(--border);
+  border-radius: var(--r2); padding: 16px;
+}
+.chk-col-head {
+  font-size: 12px; font-weight: 700; margin-bottom: 12px;
+  padding-bottom: 10px; border-bottom: 1px solid var(--border);
+}
+.chk-item {
+  font-size: 12.5px; color: var(--text2);
+  display: flex; gap: 8px; align-items: flex-start;
+  padding: 5px 0; border-bottom: 1px solid var(--border);
+  line-height: 1.45;
+}
+.chk-item:last-child { border-bottom: none; }
+.chk-check { flex-shrink: 0; margin-top: 2px; }
+
+/* ── RESPONSIVE ──────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .hist-card { grid-template-columns: 1fr; gap: 6px; }
+  .pit-card  { grid-template-columns: 24px 1fr; }
+  .pit-tag   { grid-column: 2; }
+  .country-hero::after { display: none; }
+  .site-header { padding: 32px 20px 24px; }
+  .main { padding: 20px 16px 60px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── HEADER ── -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-eyebrow">Cultural Pitfalls Guide</div>
+    <h1>글로벌 광고 <em>문화적 지뢰</em> 회피 가이드</h1>
+    <div class="header-sub">
+      <span>영국 · 프랑스 · 브라질 · 한국 · 일본 · 인도 · 싱가포르 · 미국</span>
+      <span class="header-badge">6대 검증 소스 통합</span>
+      <span class="header-badge">2025년 기준</span>
+    </div>
+  </div>
+</header>
+
+<!-- ── TAB NAV ── -->
+<nav class="tab-bar" role="navigation">
+  <div class="tab-list">
+    <button class="tab-btn active" data-tab="sources">📚 소스 가이드</button>
+    <button class="tab-btn" data-tab="uk"><span class="tab-flag">🇬🇧</span>영국</button>
+    <button class="tab-btn" data-tab="fr"><span class="tab-flag">🇫🇷</span>프랑스</button>
+    <button class="tab-btn" data-tab="br"><span class="tab-flag">🇧🇷</span>브라질</button>
+    <button class="tab-btn" data-tab="kr"><span class="tab-flag">🇰🇷</span>한국</button>
+    <button class="tab-btn" data-tab="jp"><span class="tab-flag">🇯🇵</span>일본</button>
+    <button class="tab-btn" data-tab="in"><span class="tab-flag">🇮🇳</span>인도</button>
+    <button class="tab-btn" data-tab="sg"><span class="tab-flag">🇸🇬</span>싱가포르</button>
+    <button class="tab-btn" data-tab="us"><span class="tab-flag">🇺🇸</span>미국</button>
+    <button class="tab-btn" data-tab="chk">✅ 체크리스트</button>
+  </div>
+</nav>
+
+<main class="main">
+
+<!-- ══════════════════════════════════════════════
+     SECTION 0 : 소스 가이드
+══════════════════════════════════════════════ -->
+<section class="section active" id="tab-sources">
+  <p class="source-intro">글로벌 광고 캠페인에서 문화적 지뢰를 피하려면 전략·자율규제·법률·현지 실무 등 서로 다른 레이어의 소스를 목적에 맞게 조합해야 합니다. 아래 6개 소스는 각기 다른 역할을 담당하므로, 캠페인 단계별로 순서대로 활용하는 것을 권장합니다.</p>
+  <div class="source-flow">
+    <strong>권장 활용 순서:</strong>
+    <span>① KOTRA 국가정보로 현지 맥락 파악</span>
+    <span class="flow-arrow">→</span>
+    <span>② ICAS SRO에서 자율심의 기구 확인</span>
+    <span class="flow-arrow">→</span>
+    <span>③ Chambers/Lexology로 법적 스크리닝</span>
+    <span class="flow-arrow">→</span>
+    <span>④ WARC 케이스DB에서 성공 사례 검토</span>
+    <span class="flow-arrow">→</span>
+    <span>⑤ ICC/EASA/WFA로 인플루언서·AI 최종 점검</span>
+  </div>
+  <div class="source-grid">
+    <div class="src-card blue">
+      <div class="src-name">WARC</div>
+      <div class="src-type">전략·효과성 인텔리전스 플랫폼</div>
+      <div class="src-uses">
+        <div class="src-use">광고 효과성·크리에이티브 성공 사례 DB (Admap, Journal of Advertising Research)</div>
+        <div class="src-use">국가·카테고리별 캠페인 벤치마크 및 문화 수용도 데이터</div>
+        <div class="src-use">WARC Rankings: 크리에이티브·미디어 효과성 리더보드</div>
+      </div>
+      <div class="src-when"><strong>언제 쓰나:</strong> 크리에이티브 전략 수립 전 레퍼런스 케이스 발굴, ROI 설득 자료</div>
+    </div>
+    <div class="src-card teal">
+      <div class="src-name">ICAS (글로벌 광고 자율규제 네트워크)</div>
+      <div class="src-type">34개국 SRO 네트워크</div>
+      <div class="src-uses">
+        <div class="src-use">2025 Global SRO Factbook(7판) 발간</div>
+        <div class="src-use">WFA 위탁 인플루언서 마케팅 글로벌 가이던스 (2025년 4월)</div>
+        <div class="src-use">AI 생성 마케팅 크리에이티브 투명성 글로벌 모범사례 가이던스</div>
+      </div>
+      <div class="src-when"><strong>언제 쓰나:</strong> 국가별 SRO 사전 자율심의 의뢰처 확인, 인플루언서·AI 광고 기준 점검</div>
+    </div>
+    <div class="src-card gold">
+      <div class="src-name">KOTRA 국가정보 · 해외시장뉴스</div>
+      <div class="src-type">한국기업 해외진출 실무 정보</div>
+      <div class="src-uses">
+        <div class="src-use">국가별 진출전략 연간 보고서 (2025년판 발간)</div>
+        <div class="src-use">현지 상관습·소비자 감수성·거래 시 유의사항 (무역관 현장 취재)</div>
+        <div class="src-use">PEST/SWOT 분석, 규제환경 변화, 수출 성공·실패 사례 수록</div>
+      </div>
+      <div class="src-when"><strong>언제 쓰나:</strong> 한국 브랜드 특유의 현지화 리스크 점검, 지역별 소비자 감수성 파악</div>
+    </div>
+    <div class="src-card red">
+      <div class="src-name">Chambers & Partners / Lexology · Mondaq</div>
+      <div class="src-type">국가별 광고·마케팅법 전문 리서치</div>
+      <div class="src-uses">
+        <div class="src-use">Advertising & Marketing 국가별 연간 가이드 (8개국 모두 포함)</div>
+        <div class="src-use">현지 로펌 전문가가 작성한 최신 규제 해석·판례 정리</div>
+      </div>
+      <div class="src-when"><strong>언제 쓰나:</strong> 법적 컴플라이언스 검토, 제재 리스크 사전 스크리닝</div>
+    </div>
+    <div class="src-card purple">
+      <div class="src-name">ICC 광고코드 · EASA · WFA</div>
+      <div class="src-type">국제 광고 자율 기준 프레임워크</div>
+      <div class="src-uses">
+        <div class="src-use">ICC Consolidated Code: 모든 SRO 코드의 근거가 되는 국제 표준</div>
+        <div class="src-use">EASA: 유럽 36개국 SRO 연합 인플루언서·디지털 광고 Best Practice</div>
+      </div>
+      <div class="src-when"><strong>언제 쓰나:</strong> 멀티마켓 캠페인 공통 기준선 설정, 인플루언서 계약 기준 수립</div>
+    </div>
+    <div class="src-card green">
+      <div class="src-name">Hofstede Insights / Pew Research / GfK · Ipsos</div>
+      <div class="src-type">문화 차원·사회 태도 데이터</div>
+      <div class="src-uses">
+        <div class="src-use">국가별 문화 차원 지수 (권력 거리, 개인주의, 불확실성 회피 등)</div>
+        <div class="src-use">종교·사회 태도 서베이, 소비자 가치관 비교 데이터</div>
+      </div>
+      <div class="src-when"><strong>언제 쓰나:</strong> 크리에이티브 컨셉 단계 문화 수용도 예측</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     SECTION 1 : 영국
+══════════════════════════════════════════════ -->
+<section class="section" id="tab-uk">
+  <div class="country-hero" data-flag="🇬🇧">
+    <div class="country-flag">🇬🇧</div>
+    <div class="country-info">
+      <h2>영국 (United Kingdom)</h2>
+      <div class="regulators">ASA · CAP · BCAP · CMA · FCA · Online Advertising Taskforce</div>
+      <p class="country-tagline">성 고정관념·종교·미성년자 보호 기준이 세계에서 가장 엄격한 시장 중 하나. 2019년 젠더 스테레오타입 금지 조항 신설 이후 ASA 집행이 대폭 강화됐으며, 옥외·디지털 광고의 맥락 감수성이 핵심 리스크 포인트.</p>
+      <div class="hofstede-bar">
+        <div class="hof-chip">개인주의 IDV <span>89</span></div>
+        <div class="hof-chip">불확실성 회피 UAI <span>35</span></div>
+        <div class="hof-chip">남성성 MAS <span>66</span></div>
+        <div class="hof-chip">장기지향 LTO <span>51</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sub-title">핵심 규제 기관</div>
+  <div class="reg-wrap">
+    <table class="reg-table">
+      <thead><tr><th>기관명</th><th>역할</th><th>주요 집행 수단</th></tr></thead>
+      <tbody>
+        <tr><td>ASA (광고표준국)</td><td>모든 매체 CAP·BCAP 코드 집행. 위반 시 즉시 게재 중단 명령 권한</td><td>CAP Code(비방송) / BCAP Code(방송). 2019년 유해 성 고정관념 금지 조항 신설 후 적극 집행</td></tr>
+        <tr><td>CMA (경쟁시장청)</td><td>소비자보호법 DMCCA(2024) 직접 집행 기관</td><td>연간 글로벌 매출 10% 또는 최대 £300,000 직접 과징금 (2025년~)</td></tr>
+        <tr><td>FCA (금융행위감독청)</td><td>금융·투자·가상자산 광고 규제</td><td>공정하고 명확하며 오해 없는 금융 광고 기준 집행</td></tr>
+        <tr><td>Online Advertising Taskforce</td><td>디지털 광고 규제 범정부 기구</td><td>2024년 12월 12개월 연장. Online Safety Act 2023 연계 운영</td></tr>
+        <tr><td>Tobacco and Vapes Bill</td><td>담배·베이핑·니코틴 광고 전면 금지 예정법</td><td>2027년 발효 예정. 현재 국회 통과 진행 중</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sub-title">문화적 지뢰 포인트</div>
+  <div class="pit-grid">
+    <div class="pit-card ban"><span class="pit-icon">🚫</span><div class="pit-body"><div class="pit-name">성 고정관념</div><div class="pit-desc">특정 역할(청소·육아 등)에 특정 성별만 배치, 또는 남성의 역할 부재. 2024년 JML·Calvin Klein·GIRLvsCANCER 연속 제재. WARC 사례 분석상 젠더 감수성이 영국 캠페인 실패의 최다 반복 원인.</div></div><span class="pit-tag">ASA CAP/BCAP · WARC</span></div>
+    <div class="pit-card ban"><span class="pit-icon">🚫</span><div class="pit-body"><div class="pit-name">종교적 조롱</div><div class="pit-desc">성모 마리아 등 종교 인물 희화화. 예술적 재해석 주장도 기각됨 (2024년 Fern Brady 사례). 기독교 외 타 종교 표현도 동일 기준 적용.</div></div><span class="pit-tag">ASA 2024 판정</span></div>
+    <div class="pit-card ban"><span class="pit-icon">🚫</span><div class="pit-body"><div class="pit-name">미성년자 도박 노출</div><div class="pit-desc">YouTube·FIFA 게임 등을 통해 청소년에게 영향력 있는 유명인(전·현직 운동선수 포함)을 도박 광고에 활용 금지. 2024년 BetUK·LeoVegas 제재 선례.</div></div><span class="pit-tag">ASA 2024 · CAP Code</span></div>
+    <div class="pit-card warn"><span class="pit-icon">⚠️</span><div class="pit-body"><div class="pit-name">HFSS 식품 광고</div><div class="pit-desc">2025년 10월부터 TV 오전 5시~오후 9시 및 온라인 유료 광고에서 고지방·당·염분 식품 광고 전면 금지. 한국 식품 브랜드 특히 주의 필요 (KOTRA 런던 무역관).</div></div><span class="pit-tag">CAP/BCAP · KOTRA 2025</span></div>
+    <div class="pit-card warn"><span class="pit-icon">⚠️</span><div class="pit-body"><div class="pit-name">비표적 매체의 성적 이미지</div><div class="pit-desc">옥외 광고판·대중교통 등 불특정 다수 노출 환경에서 명백히 성적인 이미지 금지. OnlyFans 인플루언서 광고 3건 중 2건 제재 (2023~24).</div></div><span class="pit-tag">ASA 2024 판정</span></div>
+    <div class="pit-card warn"><span class="pit-icon">⚠️</span><div class="pit-body"><div class="pit-name">다양성 세탁 (Diversity Washing)</div><div class="pit-desc">피상적 인종·장애·LGBTQ+ 포용 이미지가 브랜드 실제 행동과 불일치할 때 소비자 반발 및 ASA 제소 대상. ICAS 인종·민족 고정관념 가이던스 사전 확인 필요.</div></div><span class="pit-tag">ASA 고정관념 가이던스 · ICAS</span></div>
+  </div>
+
+  <div class="hist-section-label">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+    역사적 지뢰 날짜 및 사건
+    <span style="font-size:11px;color:var(--text3);font-weight:400;text-transform:none;letter-spacing:0">— 해당 날짜·어휘·이미지가 광고와 겹칠 때 강한 반발 유발</span>
+  </div>
+  <div class="hist-grid">
+    <div class="hist-card"><div class="hist-date">11월 11일<br>Remembrance Day</div><div><div class="hist-event">1차 세계대전 종전기념일</div><div class="hist-desc">국가적 애도·묵념의 날. 세일·프로모션·유머 캠페인은 전몰 군인 희화화로 해석됨. 양귀비꽃(Poppy) 이미지를 광고 소재로 활용 시 강한 반발.</div></div><div class="hist-note">'절대 광고하지 말아야 할 날'로 영국 여론이 고정된 날짜. SpaghettiOs류 기념일 마케팅이 영국에서 가장 강하게 비판받는 유형.</div></div>
+    <div class="hist-card"><div class="hist-date">4월 15일<br>힐즈버러 기념일</div><div><div class="hist-event">1989년 힐즈버러 축구장 압사 사고 (96명 사망)</div><div class="hist-desc">리버풀 FC 팬덤과 결부된 강렬한 집단 트라우마. 축구 관련 광고에서 군중·혼잡·압박 이미지 사용 시 연상 유발 가능.</div></div><div class="hist-note">리버풀 연고 브랜드 마케팅에서 반복 지적됨. '수십 년 만에 책임 인정'으로 공권력·대기업 불신과 결합.</div></div>
+    <div class="hist-card"><div class="hist-date">6월 23일<br>브렉시트 투표일</div><div><div class="hist-event">2016년 EU 탈퇴 국민투표</div><div class="hist-desc">영국 사회를 반으로 가른 정치적 분열 사건. '독립', '주권', '통제', 'Take Back Control' 어휘를 광고 카피에 사용 시 정치 편향으로 해석.</div></div><div class="hist-note">글로벌 브랜드의 영국 캠페인에서 이 어휘를 무심코 사용했다가 브렉시트 지지 신호로 독해된 사례 다수.</div></div>
+    <div class="hist-card"><div class="hist-date">8월 6·9일<br>전쟁 기념 주간</div><div><div class="hist-event">2차 세계대전 기억 (블리츠·노르망디 등)</div><div class="hist-desc">나치 심볼, 블리츠(런던 대공습) 이미지, 수용소 연상 표현을 광고 소재로 사용 시 즉각 반발. 패션·게임 브랜드의 '빈티지 전쟁 스타일' 연출이 주요 민원 유형.</div></div><div class="hist-note">ASA에 다수 민원이 접수된 카테고리. 독일제·일본제 제품 광고와 결합 시 더욱 민감.</div></div>
+  </div>
+
+  <div class="sub-title">실제 제재 사례</div>
+  <div class="case-grid">
+    <div class="case-card"><div><div class="case-title">Calvin Klein 'Calvins or Nothing' (2024)</div><div class="case-body">FKA 트위그스: 의류보다 신체에 시선 집중 유도. 켄달 제너: 속옷 차림 누운 포즈가 성적 고정관념 강화 판정. 비표적 매체(옥외) 게시가 위반의 핵심 근거.</div></div><span class="case-verdict v-ban">광고 금지</span></div>
+    <div class="case-card"><div><div class="case-title">JML Hurricane Spin Scrubber (2024)</div><div class="case-body">TV 광고에 여성만 청소 도구 사용, 남성 진행자는 청소 불참여. CAP/BCAP Code 성 고정관념 금지 조항 위반 명확 판정.</div></div><span class="case-verdict v-ban">방영 금지</span></div>
+    <div class="case-card"><div><div class="case-title">BetUK / LeoVegas — 아크인페나와 (2024)</div><div class="case-body">은퇴 축구선수가 FIFA 비디오게임 아이콘으로 청소년층 영향력 보유. 낮은 리그 경력을 방어 논거로 제시했으나 ASA 기각.</div></div><span class="case-verdict v-ban">도박 광고 금지</span></div>
+    <div class="case-card"><div><div class="case-title">Fern Brady 투어 포스터 (2024)</div><div class="case-body">성모 마리아를 연상시키는 이미지를 코미디 투어 광고에 활용. 예술적 전통 재해석 주장 기각. 기독교 신자에 심각한 불쾌감 판정.</div></div><span class="case-verdict v-ban">광고 금지</span></div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     SECTION 2 : 프랑스
+══════════════════════════════════════════════ -->
+<section class="section" id="tab-fr">
+  <div class="country-hero" data-flag="🇫🇷">
+    <div class="country-flag">🇫🇷</div>
+    <div class="country-info">
+      <h2>프랑스 (France)</h2>
+      <div class="regulators">ARPP · CNIL · ARCOM · DGCCRF · Loi Toubon · Loi Évin · Loi Influenceurs</div>
+      <p class="country-tagline">언어 주권(투봉법), 세계 최초 인플루언서법, EU GDPR 최강 집행 기관 CNIL이 공존하는 고도 규제 시장. 지적 개인주의와 그린워싱·AI 공개 의무에 대한 소비자 감수성이 매우 높음.</p>
+      <div class="hofstede-bar">
+        <div class="hof-chip">개인주의 IDV <span>71</span></div>
+        <div class="hof-chip">불확실성 회피 UAI <span>86</span></div>
+        <div class="hof-chip">권력 거리 PDI <span>68</span></div>
+        <div class="hof-chip">장기지향 LTO <span>63</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sub-title">핵심 규제 기관</div>
+  <div class="reg-wrap">
+    <table class="reg-table">
+      <thead><tr><th>기관명</th><th>역할</th><th>주요 집행 수단</th></tr></thead>
+      <tbody>
+        <tr><td>ARPP</td><td>광고 사전·사후 심의. ICAS 정회원</td><td>AI 생성 콘텐츠 공개 권고, 수정 이미지 'photo retouchée' 표기 의무, 인플루언서 가이드라인</td></tr>
+        <tr><td>CNIL</td><td>GDPR 최강 집행 기관. 디지털 광고 타겟팅 개인정보 규제</td><td>2023년 Meta에 €12억 과징금. 타겟 광고 명확한 동의 의무</td></tr>
+        <tr><td>Loi Toubon (1994)</td><td>모든 광고 프랑스어 사용 의무화</td><td>외국어 사용 시 동등 가시성 프랑스어 번역 필수. 법인 위반 시 최대 €3,750 형사 벌금</td></tr>
+        <tr><td>Loi Évin (로뱅법)</td><td>주류 광고를 제품 정보로만 제한하는 특별법</td><td>라이프스타일·감성·성공 이미지 연상 금지. SNS·인플루언서 포함 전 매체 적용</td></tr>
+        <tr><td>Loi Influenceurs (2023, 2024 개정)</td><td>세계 최초 인플루언서 광고 규제법</td><td>서면 계약 필수, 성형수술·고위험 금융 홍보 금지, AI 생성 이미지 'virtual images' 표기 의무</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sub-title">문화적 지뢰 포인트</div>
+  <div class="pit-grid">
+    <div class="pit-card ban"><span class="pit-icon">🚫</span><div class="pit-body"><div class="pit-name">영어 전용 광고 (투봉법 위반)</div><div class="pit-desc">프랑스 내 모든 광고에 프랑스어 사용 의무. 외국어 사용 시 동등 가시성의 프랑스어 번역 필수. 등록 상표 슬로건(예: Nike 'Just Do It')은 예외 가능하나 일반 카피는 불가. 한국 브랜드의 영어 슬로건 그대로 사용이 가장 빈번한 실수.</div></div><span class="pit-tag">Loi Toubon · ARPP · KOTRA</span></div>
+    <div class="pit-card ban"><span class="pit-icon">🚫</span><div class="pit-body"><div class="pit-name">주류 라이프스타일·감성 광고 (로뱅법)</div><div class="pit-desc">맥주·와인 광고에서 파티·성공·우정·섹시함 등 감성 연상 이미지 금지. 제품 스펙·원산지·생산 방식 정보만 허용. SNS 인플루언서 광고도 동일 적용.</div></div><span class="pit-tag">Loi Évin · ARPP</span></div>
+    <div class="pit-card ban"><span class="pit-icon">🚫</span><div class="pit-body"><div class="pit-name">인플루언서 성형·치료·고위험 금융 광고</div><div class="pit-desc">성형수술, 미용 시술, 치료 목적 의약품, 레버리지 금융상품(CFD·바이너리 옵션) 인플루언서 홍보 전면 금지. 외국 인플루언서가 프랑스 대상 광고 시에도 동일 적용.</div></div><span class="pit-tag">Loi Influenceurs 2023</span></div>
+    <div class="pit-card warn"><span class="pit-icon">⚠️</span><div class="pit-body"><div class="pit-name">AI 생성 이미지 미표기</div><div class="pit-desc">'virtual images' 표기 의무 (2023 인플루언서법). EU AI Act 딥페이크 공개 의무 병행. ICAS가 프랑스 모델을 AI 광고 글로벌 모범사례로 권고 중.</div></div><span class="pit-tag">Loi Influenceurs · EU AI Act · ICAS</span></div>
+    <div class="pit-card warn"><span class="pit-icon">⚠️</span><div class="pit-body"><div class="pit-name">신체 보정 이미지 미표기</div><div class="pit-desc">수정된 모델 사진에 'photo retouchée' 의무 표기. ARPP 지침. 위반 시 과징금 최대 €37,500.</div></div><span class="pit-tag">ARPP 지침 · 보건법 L2133-1</span></div>
+    <div class="pit-card warn"><span class="pit-icon">⚠️</span><div class="pit-body"><div class="pit-name">그린워싱 광고</div><div class="pit-desc">프랑스 소비자는 그린워싱에 특히 민감. WARC 데이터상 환경 주장 캠페인 반발 비율이 프랑스에서 높게 나타남. ARPP 지속가능발전 광고 가이드라인 사전 확인 필수.</div></div><span class="pit-tag">ARPP 환경 가이드라인 · WARC</span></div>
+  </div>
+
+  <div class="hist-section-label">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+    역사적 지뢰 날짜 및 사건
+  </div>
+  <div class="hist-grid">
+    <div class="hist-card"><div class="hist-date">7월 16~17일<br>Vél d'Hiv</div><div><div class="hist-event">1942년 벨 디브 유대인 일제검거 기념일</div><div class="hist-desc">프랑스 경찰이 파리 유대인 1만 3,000명을 나치에 인도한 사건. 해당 날짜 전후 세일·유머 광고는 역사 조롱으로 즉각 인식.</div></div><div class="hist-note">나치 점령기 연상 이미지, 별 모양 배지, '배급' 콘셉트 프로모션은 절대 금기. 반유대주의 규제와 결합하면 형사 처벌 가능성까지 확장.</div></div>
+    <div class="hist-card"><div class="hist-date">6월 6일<br>D-Day</div><div><div class="hist-event">노르망디 상륙작전 기념일</div><div class="hist-desc">연합군 희생자를 기리는 국가적 추모일. 전쟁 미학(군복, 상륙정, 탄흔 등)을 패션·게임 광고에 사용할 때 기념일과 겹치면 반발 급증.</div></div><div class="hist-note">외국 브랜드의 '밀리터리 캠페인'이 노르망디 기념 주간과 겹칠 때 프랑스 언론에서 집중 비판.</div></div>
+    <div class="hist-card"><div class="hist-date">5월 혁명<br>(5월 68년)</div><div><div class="hist-event">1968년 5월 혁명 기념</div><div class="hist-desc">학생·노동자 연대 시위로 드골 퇴진의 계기. '반체제' 미학을 광고가 차용하면 '혁명 정신 상업화'라는 지식인 비판 유발.</div></div><div class="hist-note">명품·대기업 브랜드가 '68세대 정신'을 광고 무드로 사용 시 진정성 부재로 강하게 비판받은 선례 다수.</div></div>
+    <div class="hist-card"><div class="hist-date">10월 17일<br>알제리 관련</div><div><div class="hist-event">알제리 독립전쟁·식민지 유산</div><div class="hist-desc">1961년 파리 알제리인 학살 등 식민지 폭력의 기억이 사회적으로 처리 중. '이국적 북아프리카' 미학이나 알제리·모로코 고정관념 광고는 탈식민 담론과 충돌.</div></div><div class="hist-note">이민자·무슬림 배경 소비자층이 증가한 프랑스에서 식민지 미화·낭만화 광고는 SNS 비판과 불매운동 위험.</div></div>
+  </div>
+
+  <div class="sub-title">실제 제재 사례</div>
+  <div class="case-grid">
+    <div class="case-card"><div><div class="case-title">Meta GDPR 위반 (2023, CNIL)</div><div class="case-body">일반 이용약관 동의를 타겟 광고 개인정보 처리 동의로 간주. 모든 디지털 광고 타겟팅에 경고 선례로 작용.</div></div><span class="case-verdict v-fine">€12억 과징금</span></div>
+    <div class="case-card"><div><div class="case-title">인플루언서 사기성 의료·금융 광고 사태 (2022~23)</div><div class="case-body">사기성 비트코인 투자, 기적의 암 치료제, 허위 직업훈련 과정을 홍보한 인플루언서들이 촉발. 2023년 세계 최초 인플루언서법 제정, 2024년 11월 EU법 준수 개정.</div></div><span class="case-verdict v-ban">법 제정으로 전면 금지</span></div>
+    <div class="case-card"><div><div class="case-title">Nike 'Just Do It' vs. 투봉법</div><div class="case-body">등록 상표 슬로건은 번역 예외 적용 가능. 그러나 일반 영어 카피라이팅은 예외 없음. 상표 등록 여부가 프랑스 광고 법적 방어의 핵심 수단.</div></div><span class="case-verdict v-warn">상표 등록 여부 확인 필수</span></div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     SECTION 3 : 브라질
+══════════════════════════════════════════════ -->
+<section class="section" id="tab-br">
+  <div class="country-hero" data-flag="🇧🇷">
+    <div class="country-flag">🇧🇷</div>
+    <div class="country-info">
+      <h2>브라질 (Brazil)</h2>
+      <div class="regulators">CONAR · SENACON · PROCON · ANPD(LGPD) · Lei Geral do Esporte 14.597/2023</div>
+      <p class="country-tagline">AI 이미지·고정관념, 아동 인플루언서, 앰부시 마케팅, 종교적 감수성이 동시에 폭발하는 복합 지뢰밭. CONAR는 2024년에만 60건 이상 베팅 광고를 제재했으며 지역별·계층별 소비자 다양성이 핵심 리스크.</p>
+      <div class="hofstede-bar">
+        <div class="hof-chip">개인주의 IDV <span>38</span></div>
+        <div class="hof-chip">불확실성 회피 UAI <span>76</span></div>
+        <div class="hof-chip">권력 거리 PDI <span>69</span></div>
+        <div class="hof-chip">인덜전스 IVR <span>59</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sub-title">핵심 규제 기관</div>
+  <div class="reg-wrap">
+    <table class="reg-table">
+      <thead><tr><th>기관명</th><th>역할</th><th>주요 집행 수단</th></tr></thead>
+      <tbody>
+        <tr><td>CONAR</td><td>비영리 자율 규제. CBAP 집행. ICAS 정회원</td><td>광고 즉시 삭제·수정 명령 가능. 2024년 60건 이상 베팅 광고 제재</td></tr>
+        <tr><td>ANPD (국가개인정보보호청)</td><td>LGPD(일반개인정보보호법) 집행</td><td>브라질판 GDPR. 디지털 타겟 광고 개인정보 처리 동의 규제. 위반 시 최대 연매출 2% 과징금</td></tr>
+        <tr><td>CONAR Annex X (2024~)</td><td>스포츠 베팅 광고 전용 부속 기준</td><td>2024년 1월 발효. 아동 인플루언서 금지, 미성년자 보호 중심</td></tr>
+        <tr><td>Lei Geral do Esporte 14.597/2023</td><td>스포츠 앰부시 마케팅 법적 정의 명문화</td><td>'연상에 의한 침해' 및 '침입에 의한 침해' 법적 정의. 스폰서십 보호 강화</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sub-title">문화적 지뢰 포인트</div>
+  <div class="pit-grid">
+    <div class="pit-card ban"><span class="pit-icon">🚫</span><div class="pit-body"><div class="pit-name">종교적 감수성</div><div class="pit-desc">인구 57% 가톨릭 + 급성장 복음주의 개신교 (2022 인구조사). 두 집단 모두 종교적 상징·의식을 광고에 가볍게 다루는 것에 강하게 반발. KOTRA 상파울루 무역관: 외국 브랜드 반발 사례 다수 보고.</div></div><span class="pit-tag">KOTRA 브라질 2025 · CONAR</span></div>
+    <div class="pit-card ban"><span class="pit-icon">🚫</span><div class="pit-body"><div class="pit-name">아동 인플루언서 활용</div><div class="pit-desc">미성년자를 인플루언서로 활용한 광고 CONAR 다수 제재. 스포츠 베팅 섹터 집중 단속. 아동 대상 폭력·비존엄 표현도 동일 기준 적용.</div></div><span class="pit-tag">CONAR CBAP · Annex X</span></div>
+    <div class="pit-card warn"><span class="pit-icon">⚠️</span><div class="pit-body"><div class="pit-name">AI 이미지의 고정관념 강화</div><div class="pit-desc">2024~25년 CONAR: 장애인·인종 고정관념을 강화하는 AI 생성 이미지 광고 거부 처분 다수. '소셜 워싱' AI 다양성 이미지도 제재 대상. ICAS·WARC 모두 신흥시장 AI 이미지 다양성 감수성 강조.</div></div><span class="pit-tag">CONAR 2024~25 · ICAS · WARC</span></div>
+    <div class="pit-card warn"><span class="pit-icon">⚠️</span><div class="pit-body"><div class="pit-name">앰부시 마케팅</div><div class="pit-desc">카니발·루나파루자·FIFA·브라질 리그 등 대형 이벤트 연상 비스폰서 광고 전면 규제. 2023년 스포츠법으로 법적 정의 명문화. CONAR 제소 + 민사 책임 이중 위험.</div></div><span class="pit-tag">Lei 14.597/2023 · CONAR</span></div>
+    <div class="pit-card warn"><span class="pit-icon">⚠️</span><div class="pit-body"><div class="pit-name">지역·계층 다양성 부재</div><div class="pit-desc">브라질은 지역별(상파울루·북동부·아마존 등) 문화 격차가 크고 계층 간 소비패턴도 상이. 상파울루 중심 이미지만 활용 시 타 지역 소비자 소외감 유발.</div></div><span class="pit-tag">KOTRA 브라질 2025 · WARC</span></div>
+    <div class="pit-card warn"><span class="pit-icon">⚠️</span><div class="pit-body"><div class="pit-name">유명인 AI 재현</div><div class="pit-desc">사망 유명인 AI 재현의 법적·윤리적 기준 미확립 상태. 2023년 VW·엘리스 헤지나 사례 이후 ICAS AI 가이던스 발표로 공개 의무 기준이 강화되는 추세.</div></div><span class="pit-tag">CONAR 2023 · ICAS AI 가이던스 2025</span></div>
+  </div>
+
+  <div class="hist-section-label">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+    역사적 지뢰 날짜 및 사건
+  </div>
+  <div class="hist-grid">
+    <div class="hist-card"><div class="hist-date">3월 31일<br>군사쿠데타 기념일</div><div><div class="hist-event">1964년 군사쿠데타 개시일 (독재 1964~1985)</div><div class="hist-desc">'쿠데타', '혁명', '질서' 어휘와 날짜가 겹치는 광고는 독재 옹호 해석 가능. 군사 미학(위장, 탱크, 경례) 광고는 독재 미화 논란 유발.</div></div><div class="hist-note">2023년 볼소나루 지지자 국회 습격 이후 정치 양극화 심화로 더욱 민감. 탱크·군사 시각 요소는 특히 주의.</div></div>
+    <div class="hist-card"><div class="hist-date">5월 13일<br>Dia da Abolição</div><div><div class="hist-event">1888년 노예제 폐지 기념일</div><div class="hist-desc">브라질은 서반구 마지막 노예제 폐지국. '노예 미학'(수갑, 쇠사슬, 플랜테이션 이미지) 패션·소품 광고는 강한 반발 유발.</div></div><div class="hist-note">노예제 관련 역사 이미지를 광고에 사용한 브라질 브랜드들이 CONAR 제소 및 대규모 SNS 비판을 받은 사례 반복.</div></div>
+    <div class="hist-card"><div class="hist-date">4월 19일<br>Dia do Índio</div><div><div class="hist-event">원주민의 날</div><div class="hist-desc">원주민 학살·수탈에 대한 집단 인식 고조. '원주민 코스튬' 판매·광고, 원주민 문화 상업화 이미지 사용은 문화 전유 비판 유발.</div></div><div class="hist-note">외국 패션·식음료 브랜드가 원주민 문양·언어를 무허가 사용 시 SNS 집중 비판. FUNAI(원주민보호재단) 법적 조치 가능성도 존재.</div></div>
+    <div class="hist-card"><div class="hist-date">2~3월 변동<br>카니발 기간</div><div><div class="hist-event">카니발 — 문화 전용 위험 지대</div><div class="hist-desc">삼바·깃털 장식 등 아프로-브라질 문화에 뿌리를 둔 카니발 미학을 사전 협의 없이 광고에 차용 시 문화 전유 비판. 동시에 앰부시 마케팅 법적 리스크도 병존.</div></div><div class="hist-note">비스폰서 브랜드의 카니발 분위기 차용: CONAR 제소 + 아프로-브라질 커뮤니티 비판 이중 위험.</div></div>
+  </div>
+
+  <div class="sub-title">실제 제재 사례</div>
+  <div class="case-grid">
+    <div class="case-card"><div><div class="case-title">Volkswagen / 엘리스 헤지나 AI 광고 (2023)</div><div class="case-body">1982년 사망 가수를 AI로 재현해 딸과 함께 노래하는 VW 70주년 캠페인. CONAR는 AI 자명성을 이유로 제재 없이 종결했으나 ICAS가 AI 투명성 가이던스 개발의 촉발 사례로 인용.</div></div><span class="case-verdict v-warn">제재 없음 (기준 변화 중)</span></div>
+    <div class="case-card"><div><div class="case-title">AI 이미지 장애인 고정관념 (2024~25)</div><div class="case-body">AI 생성 이미지가 장애인 고정관념 강화 또는 소셜 워싱으로 이어질 수 있는 광고들에 CONAR 거부 처분 다수 발생.</div></div><span class="case-verdict v-ban">광고 거부</span></div>
+    <div class="case-card"><div><div class="case-title">스포츠 베팅 아동 보호 위반 (2024)</div><div class="case-body">아동 인플루언서를 활용하거나 청소년 대상 타겟팅 실패 광고 다수 제재. CONAR Annex X 신설 첫 해(2024)에만 60건 이상 제재.</div></div><span class="case-verdict v-ban">60건+ 삭제·수정 명령</span></div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     SECTION 4 : 한국
+══════════════════════════════════════════════ -->
+<section class="section" id="tab-kr">
+  <div class="country-hero" data-flag="🇰🇷">
+    <div class="country-flag">🇰🇷</div>
+    <div class="country-info">
+      <h2>한국 (South Korea)</h2>
+      <div class="regulators">KARB (ICAS 2024 정회원) · KFTC · KCC · KCSC · PIPA/PIPC</div>
+      <p class="country-tagline">삼성 등 국내 브랜드에 대한 기대 수준이 외국 브랜드보다 높아 검증되지 않은 주장에 대한 스크루티니가 강함. 역사적 사건에 대한 집단 기억이 광고 어휘·날짜와 교차할 때 불매운동으로 즉각 전환되는 시장.</p>
+      <div class="hofstede-bar">
+        <div class="hof-chip">개인주의 IDV <span>18</span></div>
+        <div class="hof-chip">불확실성 회피 UAI <span>85</span></div>
+        <div class="hof-chip">장기지향 LTO <span>100</span></div>
+        <div class="hof-chip">남성성 MAS <span>39</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sub-title">핵심 규제 기관</div>
+  <div class="reg-wrap">
+    <table class="reg-table">
+      <thead><tr><th>기관명</th><th>역할</th><th>주요 집행 수단</th></tr></thead>
+      <tbody>
+        <tr><td>KARB (한국광고자율심의기구)</td><td>국내 광고 자율심의. 2024년 ICAS 정회원 등재 (34번째 회원)</td><td>소비자 민원 처리, Copy Advice(사전 자문), 서울메트로 교통광고 전수 사전 심의</td></tr>
+        <tr><td>KFTC (공정거래위원회)</td><td>표시·광고의 공정화에 관한 법률(표시광고법) 주관</td><td>시정명령, 과징금 부과, 형사 고발. 인플루언서 광고 공시 가이드라인 집행</td></tr>
+        <tr><td>PIPC (개인정보보호위원회)</td><td>PIPA(개인정보보호법) 집행</td><td>명시적 동의 없는 데이터 수집·광고 타겟팅 금지. 위반 시 형사 처벌 가능</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sub-title">문화적 지뢰 포인트</div>
+  <div class="pit-grid">
+    <div class="pit-card ban"><span class="pit-icon">🚫</span><div class="pit-body"><div class="pit-name">일본 제국·군사 심볼 활용</div><div class="pit-desc">욱일기, 일제강점기 연상 이미지, 군국주의 상징물은 절대 금기. 한국·중국·동남아 복수 시장에서 동시 광범위 반발을 유발하는 절대 회피 영역.</div></div><span class="pit-tag">KOTRA 한국 시장 보고서 · KARB</span></div>
+    <div class="pit-card ban"><span class="pit-icon">🚫</span><div class="pit-body"><div class="pit-name">피상적 한국 정체성 활용</div><div class="pit-desc">K-팝, 한복, 태극기 등 한국 문화 요소를 제품 연관성 없이 장식적으로 사용 시 '편승 소비(opportunistic)'로 인식. 특히 MZ세대에서 온라인 비판 집중.</div></div><span class="pit-tag">WARC 케이스DB · KOTRA</span></div>
+    <div class="pit-card ban"><span class="pit-icon">🚫</span><div class="pit-body"><div class="pit-name">근거 없는 최고·1위 표현</div><div class="pit-desc">'세계 최고', '국내 1위' 등 입증 불가능한 과장 표현. KFTC 집중 단속 대상. 경쟁사 신고에 의한 조사 개시 빈번.</div></div><span class="pit-tag">표시광고법 · KFTC 시정명령</span></div>
+    <div class="pit-card warn"><span class="pit-icon">⚠️</span><div class="pit-body"><div class="pit-name">역사적 사건 날짜·어휘의 광고 연상</div><div class="pit-desc">5·18, 4·19, 6·25 등 국가적 애도 기념일 전후 프로모션 문구·이미지·날짜가 사건과 연상 구조를 형성할 때 즉각적 불매운동으로 전환. 카피의 '연상 메커니즘' 검토가 핵심.</div></div><span class="pit-tag">스타벅스 탱크데이 2025 선례</span></div>
+    <div class="pit-card warn"><span class="pit-icon">⚠️</span><div class="pit-body"><div class="pit-name">젠더 고정관념</div><div class="pit-desc">가사·돌봄 역할에 여성만 배치하거나, 기술·리더십에 남성만 등장하는 구도. MZ세대 중심 SNS 비판 급증. 영국 ASA와 동일 패턴이 한국에서도 확인.</div></div><span class="pit-tag">KARB 모니터링 · WARC</span></div>
+    <div class="pit-card warn"><span class="pit-icon">⚠️</span><div class="pit-body"><div class="pit-name">인플루언서 미공시</div><div class="pit-desc">KFTC는 인플루언서 광고 공시 가이드라인 적극 집행 중. '광고', 'AD', 'Sponsored' 명시 의무. 미공시 발견 시 KFTC 조사 개시 및 과징금.</div></div><span class="pit-tag">KFTC 인플루언서 가이드라인 · KCC</span></div>
+  </div>
+
+  <div class="hist-section-label">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+    역사적 지뢰 날짜 및 사건
+    <span style="font-size:11px;color:var(--text3);font-weight:400;text-transform:none;letter-spacing:0">— 날짜뿐 아니라 광고 어휘·이미지의 '연상 구조'까지 검토 필수</span>
+  </div>
+
+  <div class="callout-box">
+    <div class="callout-head">⚡ 2025년 최신 선례: 스타벅스 코리아 '탱크데이' 사태</div>
+    <p>스타벅스 코리아는 2026년 5월 18일(5·18 광주민주화운동 46주년)에 텀블러 프로모션 '탱크데이 518'을 진행하며 <strong>'책상에 탁!'</strong>이라는 카피를 사용했다. 이는 1987년 박종철 고문치사 사건 당시 경찰이 사용한 은폐 문구 <strong>"책상을 탁 치니 억 하고 죽었다"</strong>를 직접 연상시켰다.</p>
+    <div class="quote">"책상을 탁 치니 억 하고 죽었다" — 1987년 박종철 고문치사 당시 경찰 은폐 문구</div>
+    <p>결과: 대표이사 해임, 이재명 대통령 공개 비판, 전국공무원노동조합 불매운동 공문 발송, 정부 포상 취소 검토, 스타벅스 상품권 중고거래 가격 76% 급락. <strong>날짜 + 단어(탱크) + 카피 어휘(책상에 탁!)의 삼중 연상 구조가 복합적으로 작용한 사례.</strong></p>
+  </div>
+
+  <div class="hist-grid">
+    <div class="hist-card"><div class="hist-date">5월 18일<br>5·18 광주민주화운동</div><div><div class="hist-event">1980년 광주민주화운동 기념일</div><div class="hist-desc">군사독재에 맞선 민주화운동으로 수백 명 희생. '탱크', '군인', '총', '계엄' 등 시각 요소 및 날짜와 광고가 교차할 때 즉각적 불매운동 유발. 어휘의 연상 구조도 정밀 점검 필수.</div></div><div class="hist-note">2026년 스타벅스 '탱크데이' 사태: 날짜 + 탱크 단어 + '책상에 탁!' 카피가 3중 연상 구조를 형성해 대표이사 해임까지 이어진 국내 최대 광고 참사 선례.</div></div>
+    <div class="hist-card"><div class="hist-date">4월 19일<br>4·19 혁명</div><div><div class="hist-event">1960년 학생혁명 기념일 (이승만 하야)</div><div class="hist-desc">학생 주도 민주화 운동. 4월 19일 주변 광고에서 '혁명', '독재', '부정선거' 연상 어휘 사용 시 민감. 직접 연관성보다 날짜와의 우연한 겹침도 SNS에서 문제화됨.</div></div><div class="hist-note">5·18보다는 낮은 강도이나, 정치 갈등 고조 시기에는 민감도가 급상승하는 날짜.</div></div>
+    <div class="hist-card"><div class="hist-date">6월 25일<br>6·25 한국전쟁</div><div><div class="hist-event">1950년 한국전쟁 발발일</div><div class="hist-desc">전쟁 관련 이미지(군복, 총기, 폭발), '전쟁', '적군', '폭격' 등 어휘를 6월 25일 전후 광고에 사용 시 강한 반발. 엔터테인먼트·게임 광고에서 군사 미학 활용 시 특히 주의.</div></div><div class="hist-note">국가 보훈의 날과 겹쳐 애국주의 감수성이 고조되는 날짜. 외국 브랜드의 '전쟁 미학' 캠페인이 이 시기와 겹치면 국민 정서 훼손으로 비판받는 사례 있음.</div></div>
+    <div class="hist-card"><div class="hist-date">3월 1일<br>3·1 운동</div><div><div class="hist-event">1919년 독립운동 기념일</div><div class="hist-desc">일제강점기 독립운동 기념일. 일본 제품·일본 관련 브랜드의 프로모션이 이 날짜와 겹칠 때 강한 거부감 유발. 욱일기 등 제국 심볼과의 결합은 치명적.</div></div><div class="hist-note">한일 관계 긴장 시기에 더욱 민감도가 높아지는 날짜. '친일' 프레임이 붙으면 불매운동으로 즉각 전환.</div></div>
+    <div class="hist-card"><div class="hist-date">10월 26일<br>박정희 서거일</div><div><div class="hist-event">1979년 박정희 대통령 서거일</div><div class="hist-desc">정치적으로 극도로 양극화된 날짜. 어떠한 입장 표명도 일방의 강한 반발을 유발. 브랜드는 '중립' 포지션도 어느 쪽으로든 해석될 수 있어 완전 회피가 원칙.</div></div><div class="hist-note">한국 정치 지형에서 가장 첨예하게 분열된 역사 인물 관련 날짜. 브랜드 광고와의 접점을 원천 차단해야 함.</div></div>
+  </div>
+
+  <div class="sub-title">실제 제재 사례</div>
+  <div class="case-grid">
+    <div class="case-card"><div><div class="case-title">스타벅스 코리아 '탱크데이' 사태 (2026년 5월)</div><div class="case-body">5·18 기념일에 '탱크데이 518' + '책상에 탁!' 카피 사용. 날짜·단어·어휘 3중 연상 구조로 즉각적 불매운동 발생. 대표이사 해임, 정부 포상 취소 검토, 공무원 노조 불매운동 공문 전국 발송.</div></div><span class="case-verdict v-ban">대표이사 해임 · 전국 불매운동</span></div>
+    <div class="case-card"><div><div class="case-title">K-팝 아이돌 활용 '편승' 광고 (반복 사례)</div><div class="case-body">제품 연관성 없이 인기 아이돌을 단순 동원한 캠페인. 팬덤이 '브랜드가 아이돌을 이용만 했다'고 인식, 불매운동으로 이어진 사례 복수 존재.</div></div><span class="case-verdict v-warn">SNS 브랜드 평판 타격</span></div>
+    <div class="case-card"><div><div class="case-title">욱일기 연상 디자인 사용 (반복 사례)</div><div class="case-body">글로벌 브랜드의 방사형 디자인·태양 모티프가 욱일기로 지적. 한국뿐 아니라 중국에서도 동시 반발. 디자인 검토 단계에서 한국·아시아 로컬팀 사전 확인 필수.</div></div><span class="case-verdict v-ban">브랜드 공개 사과 · 즉시 교체</span></div>
+    <div class="case-card"><div><div class="case-title">KFTC 인플루언서 미공시 제재 (2022~24)</div><div class="case-body">다수 브랜드가 인플루언서 포스팅에 광고 표시 누락. KFTC 집중 점검 기간 설정, 과징금 부과 및 시정명령 시행.</div></div><span class="case-verdict v-fine">과징금 · 시정명령 공시</span></div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     SECTION 5 : 일본
+══════════════════════════════════════════════ -->
+<section class="section" id="tab-jp">
+  <div class="country-hero" data-flag="🇯🇵">
+    <div class="country-flag">🇯🇵</div>
+    <div class="country-info">
+      <h2>일본 (Japan)</h2>
+      <div class="regulators">JARO · CAA (소비자청) · AUPMR · MIC · 개인정보보호법(APPI)</div>
+      <p class="country-tagline">세계 최고 남성성(MAS=95)과 높은 불확실성 회피(UAI=92)가 결합된 시장. 정밀 품질과 절제된 진정성을 중시하며, 과장·감정적 표현은 품질 불신으로 직결됨. 2023년 스텔스마케팅 규제 신설로 인플루언서 공시 의무가 법제화됨.</p>
+      <div class="hofstede-bar">
+        <div class="hof-chip">남성성 MAS <span>95</span></div>
+        <div class="hof-chip">불확실성 회피 UAI <span>92</span></div>
+        <div class="hof-chip">장기지향 LTO <span>88</span></div>
+        <div class="hof-chip">개인주의 IDV <span>46</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sub-title">핵심 규제 기관</div>
+  <div class="reg-wrap">
+    <table class="reg-table">
+      <thead><tr><th>기관명</th><th>역할</th><th>주요 집행 수단</th></tr></thead>
+      <tbody>
+        <tr><td>JARO (일본광고심사기구)</td><td>광고 업계 자율심의기관. 소비자·경쟁사 민원 처리</td><td>권고·수정 명령(비강제). 결정 공개로 사회적 제재. 사전 자문 역할</td></tr>
+        <tr><td>CAA (소비자청)</td><td>경품류 및 부당표시 방지법(AUPMR) 주관 집행 기관</td><td>시정명령, 과징금(위반 기간 매출액의 3%). 2023년 스텔스마케팅 규제 신설. 2024년 10월 강화</td></tr>
+        <tr><td>APPI (개인정보보호법)</td><td>디지털 광고 개인정보 처리 규제</td><td>명확한 목적 고지·동의 의무. 위반 시 형사 처벌·1억 엔 이하 벌금 가능</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sub-title">문화적 지뢰 포인트</div>
+  <div class="pit-grid">
+    <div class="pit-card ban"><span class="pit-icon">🚫</span><div class="pit-body"><div class="pit-name">전쟁·제국 심볼 (욱일기 등)</div><div class="pit-desc">욱일기, 군국주의 관련 시각 요소는 아시아 전역에서 동시 반발. 일본 내에서도 역사 인식 논란을 촉발하는 절대 금기 영역.</div></div><span class="pit-tag">Chambers Japan 광고 가이드</span></div>
+    <div class="pit-card ban"><span class="pit-icon">🚫</span><div class="pit-body"><div class="pit-name">전통 문화 오용 (오비, 기모노 등)</div><div class="pit-desc">오비(기모노 허리띠)를 밟거나 전통 공예품을 소도구로 경시하는 표현. 고도의 장인 기술을 상징하는 물건을 광고 소품으로 무분별 사용 시 즉각 반발. 고급 패션 브랜드 실제 사례 있음.</div></div><span class="pit-tag">Chambers Japan Expert Focus 2022</span></div>
+    <div class="pit-card ban"><span class="pit-icon">🚫</span><div class="pit-body"><div class="pit-name">스텔스 마케팅 (미공시 인플루언서 광고)</div><div class="pit-desc">2023년 10월부터 AUPMR 명시적 금지. 인플루언서 포스팅에 '광고', '협찬', 'PR' 표시 없으면 법위반. CAA 2024년 오츠카제약 제재 선례 확립.</div></div><span class="pit-tag">CAA AUPMR 2023 · JARO</span></div>
+    <div class="pit-card ban"><span class="pit-icon">🚫</span><div class="pit-body"><div class="pit-name">근거 없는 1위·최고 표현</div><div class="pit-desc">'No.1' 표현 남용에 대해 CAA가 최근 수 년 간 10건 이상 시정명령. 일본 소비자는 기술 성능 주장의 정확성에 특히 민감.</div></div><span class="pit-tag">CAA 시정명령 사례 · JARO</span></div>
+    <div class="pit-card warn"><span class="pit-icon">⚠️</span><div class="pit-body"><div class="pit-name">과도한 감정적 표현</div><div class="pit-desc">고함·과장 리액션·미국식 열정 연출은 '진정성 없음'으로 즉각 인식. 품질 신뢰를 오히려 훼손하는 역효과 발생. UAI=92 환경에서 모호·과장은 불신의 신호.</div></div><span class="pit-tag">WARC 일본 캠페인 사례 · Hofstede</span></div>
+    <div class="pit-card warn"><span class="pit-icon">⚠️</span><div class="pit-body"><div class="pit-name">동양주의(오리엔탈리즘) 미학</div><div class="pit-desc">게이샤·사무라이·벚꽃을 일본 정체성의 주요 상징으로 활용하는 외국 브랜드 광고. 젊은 도시 소비자에게 '외국인 시각의 스테레오타입'으로 인식.</div></div><span class="pit-tag">Chambers Japan 가이드 · WARC</span></div>
+  </div>
+
+  <div class="hist-section-label">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+    역사적 지뢰 날짜 및 사건
+  </div>
+  <div class="hist-grid">
+    <div class="hist-card"><div class="hist-date">8월 6·9일<br>히로시마·나가사키</div><div><div class="hist-event">원폭 투하 기념일 (1945)</div><div class="hist-desc">세계 유일의 핵폭탄 피폭국으로서의 국가 정체성. 핵·폭발·버섯구름 이미지를 광고 소재로 사용하거나 이 날짜와 프로모션이 겹치면 강한 반발. 이 날짜는 전 세계에서도 감수성이 요구됨.</div></div><div class="hist-note">일본의 '핵 알레르기'는 세계 최강. 폭발 이미지나 mushroom cloud 연상 소재는 이 날짜 외에도 항상 주의가 필요.</div></div>
+    <div class="hist-card"><div class="hist-date">8월 15일<br>종전기념일</div><div><div class="hist-event">1945년 일본 패전·종전 기념일</div><div class="hist-desc">야스쿠니 신사 참배 논란과 결부된 극도로 민감한 날짜. 전쟁 미학, '승리', '정복' 어휘, 군복 이미지가 광고에 등장하면 내외부 모두에서 비판 유발.</div></div><div class="hist-note">아시아 인접국(한국·중국)에서도 동시에 민감하게 반응하는 날짜. 멀티마켓 캠페인에서 특히 위험.</div></div>
+    <div class="hist-card"><div class="hist-date">3월 11일<br>동일본대지진</div><div><div class="hist-event">2011년 동일본대지진·쓰나미 (사망+실종 2만 명+)</div><div class="hist-desc">쓰나미 이미지, 파도·물 관련 과장 표현, 원자력 관련 어휘가 이 날짜 전후 광고에 사용될 때 강한 반발. 복구 과정에서의 집단 트라우마가 여전히 남아있음.</div></div><div class="hist-note">자연재해·원전 관련 이미지를 광고 소재로 활용할 때 이 날짜와의 교차 여부를 항상 확인.</div></div>
+    <div class="hist-card"><div class="hist-date">난징대학살<br>12월 13일</div><div><div class="hist-event">1937년 난징대학살 (아시아 공통 민감 이슈)</div><div class="hist-desc">일본 내에서도 역사 인식 논쟁이 지속 중. 중국·한국 시장에서 이 이슈와 연결되는 일본 브랜드 광고는 특히 주의. 멀티마켓 캠페인의 시장별 반응 차이가 극명하게 나타나는 이슈.</div></div><div class="hist-note">일본 광고주가 글로벌 캠페인 집행 시 아시아 시장 전체에서 이 이슈와의 연관성을 사전 점검해야 함.</div></div>
+  </div>
+
+  <div class="sub-title">실제 제재 사례</div>
+  <div class="case-grid">
+    <div class="case-card"><div><div class="case-title">고급 패션 브랜드 오비 광고 (2022, 공개 비판)</div><div class="case-body">글로벌 하이패션 브랜드가 일본인 모델을 기모노 오비 위에 세우는 광고 연출. 오비는 수년간 훈련이 필요한 장인 공예품으로, 밟는 행위는 큰 결례. 즉각적인 온라인 비판과 공식 사과 요구.</div></div><span class="case-verdict v-ban">광고 즉시 철수 · 공개 사과</span></div>
+    <div class="case-card"><div><div class="case-title">오츠카제약 스텔스마케팅 (2024, CAA)</div><div class="case-body">Instagram 인플루언서 포스팅에 광고 표시 없이 제품 홍보. 브랜드 쇼핑몰에도 동일 포스팅 게재. 2023년 스텔스마케팅 규제 신설 이후 첫 주요 집행 사례로 기록.</div></div><span class="case-verdict v-ban">CAA 시정명령 공시</span></div>
+    <div class="case-card"><div><div class="case-title">'No.1' 표현 남용 제재 (반복 사례)</div><div class="case-body">불명확한 조사를 근거로 '일본 No.1'을 주장한 광고들에 CAA 시정명령. 10건 이상 축적된 집행 선례로, 일본 시장의 실증 요건 기준이 매우 높음을 보여줌.</div></div><span class="case-verdict v-fine">매출액의 3% 과징금</span></div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     SECTION 6 : 인도
+══════════════════════════════════════════════ -->
+<section class="section" id="tab-in">
+  <div class="country-hero" data-flag="🇮🇳">
+    <div class="country-flag">🇮🇳</div>
+    <div class="country-info">
+      <h2>인도 (India)</h2>
+      <div class="regulators">ASCI (2025 ICAS 글로벌 서밋 개최) · CCPA · MIB · IIGC · DPDP Act 2023</div>
+      <p class="country-tagline">언어·종교·지역·계층이 극도로 다양한 초복잡 시장. ASCI 2024-25 보고서: 9,599건 처리, 97%가 디지털에서 발생, 98%의 광고가 수정 필요 판정. 힌디어 전용 광고가 남부 지역 소비자 반발을 유발하는 지역 언어 지뢰가 특징적.</p>
+      <div class="hofstede-bar">
+        <div class="hof-chip">권력 거리 PDI <span>77</span></div>
+        <div class="hof-chip">불확실성 회피 UAI <span>40</span></div>
+        <div class="hof-chip">개인주의 IDV <span>48</span></div>
+        <div class="hof-chip">장기지향 LTO <span>51</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sub-title">핵심 규제 기관</div>
+  <div class="reg-wrap">
+    <table class="reg-table">
+      <thead><tr><th>기관명</th><th>역할</th><th>주요 집행 수단</th></tr></thead>
+      <tbody>
+        <tr><td>ASCI (인도광고심의위원회)</td><td>1985년 설립 광고 자율심의기관. ICAS 정회원. 2025 ICAS 글로벌 서밋 뭄바이 개최</td><td>2024-25: 9,599건 처리, 7,199건 광고 심의, 98% 수정 필요 판정. 평균 처리 16일</td></tr>
+        <tr><td>CCPA (중앙소비자보호청)</td><td>소비자보호법 2019 집행. 허위·오해 광고 직접 조사권</td><td>시정명령, 광고 중단 명령, 과징금 부과. 2024년 파탄잘리 사례로 대법원 직접 개입</td></tr>
+        <tr><td>IIGC (인도인플루언서거버닝카운실)</td><td>2025년 4월 '인플루언서 기준 강령' 발표 (20개 섹션)</td><td>공시 의무, 허위 주장 금지, 유해 제품(불법 베팅 등) 홍보 금지 표준 수립</td></tr>
+        <tr><td>DPDP Act 2023</td><td>디지털 개인정보보호법. 2024년 본격 집행</td><td>명시적 동의 의무, 데이터 최소 수집 원칙. 위반 시 최대 INR 250억 과징금 예정</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sub-title">문화적 지뢰 포인트</div>
+  <div class="pit-grid">
+    <div class="pit-card ban"><span class="pit-icon">🚫</span><div class="pit-body"><div class="pit-name">힌두교·이슬람 등 종교 상징 오용</div><div class="pit-desc">신상, 사원 도상, 성물을 제품 광고 소품으로 사용 시 특정 종교 공동체 전체의 반발 및 불매운동 유발. 케이블TV법 기반 종교 감정 훼손 광고 제재 가능.</div></div><span class="pit-tag">ASCI 코드 · 케이블TV규제법</span></div>
+    <div class="pit-card ban"><span class="pit-icon">🚫</span><div class="pit-body"><div class="pit-name">인도를 단일 언어·문화로 표현</div><div class="pit-desc">힌디어 전용 광고가 타밀나두·카르나타카·케랄라 등 드라비다어권 주에서 지역 정체성 반발 촉발. '힌디어 강요' 인식은 강력한 정치·문화적 저항 유발.</div></div><span class="pit-tag">KOTRA 인도 진출전략 · WARC</span></div>
+    <div class="pit-card ban"><span class="pit-icon">🚫</span><div class="pit-body"><div class="pit-name">무근거 건강·의료 효능 주장</div><div class="pit-desc">ASCI 2024-25에서 개인케어 5.7%, 헬스케어 5.23%, F&B 4.69%가 주요 위반 카테고리. 대법원이 파탄잘리 사건에서 허위 의료 주장 광고에 직접 제재.</div></div><span class="pit-tag">ASCI 2024-25 보고서 · CCPA</span></div>
+    <div class="pit-card warn"><span class="pit-icon">⚠️</span><div class="pit-body"><div class="pit-name">인플루언서 미공시 (급격한 집행 강화)</div><div class="pit-desc">ASCI가 조사한 인플루언서 광고 1,173건 중 98%가 수정 필요. 76%가 공시 의무 미이행. SEBI는 금융 분야 미등록 인플루언서 활동 금지령 시행.</div></div><span class="pit-tag">ASCI 2024-25 보고서 · IIGC 2025</span></div>
+    <div class="pit-card warn"><span class="pit-icon">⚠️</span><div class="pit-body"><div class="pit-name">카스트·계층 비하 표현</div><div class="pit-desc">특정 직업군이나 계층을 비하하거나, 빈곤을 통해 제품의 우월성을 연출하는 구조. 소비자보호법상 명예훼손·기만 광고로 제소 가능.</div></div><span class="pit-tag">CCPA 가이드라인 · ASCI</span></div>
+    <div class="pit-card warn"><span class="pit-icon">⚠️</span><div class="pit-body"><div class="pit-name">불법 온라인 베팅 광고</div><div class="pit-desc">ASCI 2024-25 전체 위반의 43%가 불법 베팅 플랫폼 광고. 브랜드가 베팅 앱·플랫폼과 제휴 시 공동 책임 리스크. MIB와 ASCI의 일일 보고 체계 운영.</div></div><span class="pit-tag">ASCI 2024-25 · MIB 단속 지침</span></div>
+  </div>
+
+  <div class="hist-section-label">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+    역사적 지뢰 날짜 및 사건
+  </div>
+  <div class="hist-grid">
+    <div class="hist-card"><div class="hist-date">8월 14~15일<br>분리독립 기념</div><div><div class="hist-event">1947년 인도-파키스탄 분리독립 (파티션)</div><div class="hist-desc">분리독립 과정에서 200만 명 이상 사망. 8월 14일은 파키스탄 독립일로, 인도 소비자에게 힌두-무슬림 종파 폭력의 기억. 종교 간 갈등을 연상시키는 이미지 사용 주의.</div></div><div class="hist-note">인도-파키스탄 긴장 고조 시기에는 특히 민감. 이 날짜 전후 종교·국가 정체성 관련 광고는 세심한 검토 필요.</div></div>
+    <div class="hist-card"><div class="hist-date">4월 13일<br>잘리안왈라 바그</div><div><div class="hist-event">1919년 암리차르 학살 기념일</div><div class="hist-desc">영국 군인이 비무장 인도 시민 379명(추정 1,500명 이상)을 학살한 사건. 영국 브랜드가 이 날짜 주변에 집행하는 광고는 특히 주의. 식민지 지배를 연상시키는 어휘·이미지 회피.</div></div><div class="hist-note">영국 브랜드의 인도 캠페인에서 반드시 검토해야 하는 날짜. 아직도 영국 정부의 공식 사과가 없어 감수성이 지속.</div></div>
+    <div class="hist-card"><div class="hist-date">1975~77년<br>비상계엄 기간</div><div><div class="hist-event">인디라 간디 비상계엄 (Emergency Period)</div><div class="hist-desc">언론 통제·야당 탄압이 이루어진 인도 민주주의 최대 위기. 정부 통제·검열·권위주의 연상 광고 표현은 특정 정치 집단에서 강한 반발 유발 가능.</div></div><div class="hist-note">현 정치 환경과 결합해 '권위주의' 프레임과 광고가 연결될 때 특히 민감. 정치적으로 중립적인 표현 유지 필수.</div></div>
+    <div class="hist-card"><div class="hist-date">12월 6일<br>바브리 마스지드</div><div><div class="hist-event">1992년 바브리 마스지드 모스크 철거 사건</div><div class="hist-desc">힌두교-이슬람 종파 갈등의 상징적 사건. 이 날짜 전후 종교 관련 이미지·문구를 광고에 사용하면 종파 갈등 연상으로 즉각 반발. 2024년 해당 부지에 힌두 사원 개원으로 다시 화제화.</div></div><div class="hist-note">인도에서 종교 관련 광고 리스크가 가장 집약되는 날짜 중 하나. 절대 회피 원칙 권고.</div></div>
+  </div>
+
+  <div class="sub-title">실제 제재 사례</div>
+  <div class="case-grid">
+    <div class="case-card"><div><div class="case-title">파탄잘리 허위 의료 광고 (2023~24, 대법원)</div><div class="case-body">요가 브랜드 파탄잘리가 코로나 치료제 효과 주장 광고 게재. 인도 대법원이 직접 개입해 광고 금지 및 경영진 사과 명령. 광고 집행 기관 전반의 강화 계기.</div></div><span class="case-verdict v-ban">대법원 광고 금지 · 경영진 공개 사과</span></div>
+    <div class="case-card"><div><div class="case-title">불법 베팅 플랫폼 인플루언서 광고 (2024-25)</div><div class="case-body">ASCI 전체 위반의 43%가 불법 해외 베팅 플랫폼 광고. MIB와 협력해 일일 보고 체계 운영, 신속 제거 명령. 인플루언서 공동책임 논의 진행 중.</div></div><span class="case-verdict v-ban">광고 삭제 · MIB 플랫폼 차단 협력</span></div>
+    <div class="case-card"><div><div class="case-title">힌디어 전용 광고 지역 반발 (반복 사례)</div><div class="case-body">글로벌 브랜드가 인도 전국 캠페인을 힌디어 단일로 집행. 타밀나두·카르나타카 등 남부 지역에서 지역 언어 무시로 비판 확산 및 매출 부진.</div></div><span class="case-verdict v-warn">SNS 비판 · 지역 리뷰 부정 급증</span></div>
+    <div class="case-card"><div><div class="case-title">허위 카메라·AI 기능 주장 (기술 브랜드 반복)</div><div class="case-body">스마트폰 카메라 성능 과장 광고에 ASCI 조사. 글로벌 테크 브랜드 대상. ASCI는 실제 촬영 결과물과 광고 이미지 비교 검증 시행.</div></div><span class="case-verdict v-warn">ASCI 수정 명령 · 제품 사양 재표기</span></div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     SECTION 7 : 싱가포르
+══════════════════════════════════════════════ -->
+<section class="section" id="tab-sg">
+  <div class="country-hero" data-flag="🇸🇬">
+    <div class="country-flag">🇸🇬</div>
+    <div class="country-info">
+      <h2>싱가포르 (Singapore)</h2>
+      <div class="regulators">ASAS · IMDA · PDPC · 인종화합법(2024 신설) · 종교화합유지법(MRHA)</div>
+      <p class="country-tagline">CMIO(중국계·말레이계·인도계·기타) 4개 공동체 다인종 국가로, 인종·종교 균형 표현이 법적 의무. 2024년 인종화합법 신설로 상업 콘텐츠에도 인종 화합 요건이 최초로 법제화됨. '다른 동남아 시장과 동일시하는 것'이 가장 빠른 반발을 유발하는 시장.</p>
+      <div class="hofstede-bar">
+        <div class="hof-chip">장기지향 LTO <span>72</span></div>
+        <div class="hof-chip">인덜전스 IVR <span>46</span></div>
+        <div class="hof-chip">권력 거리 PDI <span>74</span></div>
+        <div class="hof-chip">개인주의 IDV <span>20</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sub-title">핵심 규제 기관</div>
+  <div class="reg-wrap">
+    <table class="reg-table">
+      <thead><tr><th>기관명</th><th>역할</th><th>주요 집행 수단</th></tr></thead>
+      <tbody>
+        <tr><td>ASAS (싱가포르광고표준청)</td><td>ICAS 회원. SCAP(싱가포르광고실무규범) 관리·집행</td><td>광고 공간·시간 차단 명령, 에이전시 거래 특권 박탈, 공개 명의 제재. ASAS 결정 최종 확정</td></tr>
+        <tr><td>IMDA (정보통신미디어개발청)</td><td>방송·디지털 플랫폼 콘텐츠 기준 집행. 인종·종교 화합 감독</td><td>2023년 온라인 안전법: 인종·종교 불화 조장 콘텐츠 삭제 명령권. 2024년 선거 딥페이크 광고 금지법</td></tr>
+        <tr><td>PDPC (개인정보보호위원회)</td><td>PDPA(개인정보보호법) 집행. 마케팅 데이터 처리 규제</td><td>명시적 동의 없는 광고 타겟팅 금지. 위반 시 최대 SGD 100만 과징금</td></tr>
+        <tr><td>인종화합법 (2024 신설)</td><td>인종 화합을 훼손하는 상업 콘텐츠 규제</td><td>법원 직접 제재 가능. 인종·민족 불균형 묘사 광고의 최초 법적 제재 기반 형성</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sub-title">문화적 지뢰 포인트</div>
+  <div class="pit-grid">
+    <div class="pit-card ban"><span class="pit-icon">🚫</span><div class="pit-body"><div class="pit-name">인종 불균형 캐스팅</div><div class="pit-desc">CMIO 4개 공동체 중 하나(특히 중국계 다수)만 집중 등장하는 광고. 인종화합법(2024 신설)과 SCAP 동시 위반 가능성. '싱가포르 전체를 대표한다'는 맥락에서 특히 민감.</div></div><span class="pit-tag">SCAP · 인종화합법 2024 · IMDA</span></div>
+    <div class="pit-card ban"><span class="pit-icon">🚫</span><div class="pit-body"><div class="pit-name">종교 상징 맥락 없는 활용</div><div class="pit-desc">모스크·힌두 사원·교회를 단순 배경으로 사용하거나 종교 의식을 광고 소품으로 활용. 종교화합유지법(MRHA) 연계 정부 제재 가능성. 다른 시장보다 법적 리스크가 높음.</div></div><span class="pit-tag">MRHA · IMDA 콘텐츠 코드</span></div>
+    <div class="pit-card ban"><span class="pit-icon">🚫</span><div class="pit-body"><div class="pit-name">싱가포르를 타 동남아와 혼동</div><div class="pit-desc">말레이어·태국어·인도네시아어 등 비공식 언어 사용, 타국 상황 반영 이미지 적용. 싱가포르 소비자는 즉각 '문화적 게으름'으로 인식하며 이 시장에서 가장 빠른 반발 유형.</div></div><span class="pit-tag">KOTRA 싱가포르 진출 가이드 · ASAS</span></div>
+    <div class="pit-card warn"><span class="pit-icon">⚠️</span><div class="pit-body"><div class="pit-name">디지털 타겟팅 동의 없는 개인정보 활용</div><div class="pit-desc">PDPA 위반. PDPC가 Meta 리드광고 등 동의 메커니즘 미흡 사례에 적극 과징금 부과. 최대 SGD 100만 벌금.</div></div><span class="pit-tag">PDPC 집행 사례 · PDPA</span></div>
+    <div class="pit-card warn"><span class="pit-icon">⚠️</span><div class="pit-body"><div class="pit-name">선거 관련 AI·딥페이크 광고</div><div class="pit-desc">2024년 10월 신법: 선거 후보자 관련 AI 생성·조작 콘텐츠 광고 금지. IMDA가 삭제 명령권 보유. 브랜드가 선거 이슈와 연계된 광고 집행 시 의도치 않은 위반 가능.</div></div><span class="pit-tag">IMDA 2024 선거법 개정</span></div>
+    <div class="pit-card warn"><span class="pit-icon">⚠️</span><div class="pit-body"><div class="pit-name">인플루언서 미공시</div><div class="pit-desc">ASAS가 Instagram 인플루언서 미공시 유료 파트너십을 우선 집행 영역으로 지정. ICAS 글로벌 인플루언서 가이던스(2025) 동일 기준 적용.</div></div><span class="pit-tag">ASAS · ICAS/WFA 인플루언서 가이던스</span></div>
+  </div>
+
+  <div class="hist-section-label">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+    역사적 지뢰 날짜 및 사건
+  </div>
+  <div class="hist-grid">
+    <div class="hist-card"><div class="hist-date">7월 21일<br>인종화합의 날</div><div><div class="hist-event">1964년 인종 폭동 기념 (Racial Harmony Day)</div><div class="hist-desc">말레이-중국계 간 인종 폭동으로 36명 사망. 이 날짜는 인종 화합을 기리는 날로 지정됨. 인종 간 차이를 부각시키는 광고가 이 날짜와 겹치면 강한 반발.</div></div><div class="hist-note">학교·풀뿌리 기관의 인종화합의 날 행사와 브랜드 광고가 충돌하지 않도록 타이밍 조정 필요.</div></div>
+    <div class="hist-card"><div class="hist-date">8월 9일<br>싱가포르 독립기념일</div><div><div class="hist-event">1965년 싱가포르 독립</div><div class="hist-desc">말레이시아로부터의 분리독립. 강한 국가 자긍심과 '작지만 성공한 나라' 정체성이 압축된 날짜. 외국 브랜드가 이 날을 상업적으로 소비하는 방식에 매우 민감.</div></div><div class="hist-note">독립기념일 광고는 CMIO 다인종 균형 표현과 '싱가포르 독자성 강조'가 동시에 요구됨. 타 동남아 이미지 혼합은 특히 금기.</div></div>
+    <div class="hist-card"><div class="hist-date">2월 15일<br>싱가포르 함락일</div><div><div class="hist-event">1942년 일본 점령 (싱가포르 함락)</div><div class="hist-desc">일본군에 의한 화교 학살(숙청)을 포함한 2차 세계대전 일본 점령 시작일. 일본 브랜드의 싱가포르 캠페인에서 특히 감수성이 요구되는 역사적 배경.</div></div><div class="hist-note">싱가포르 화교 커뮤니티에 깊은 집단 기억으로 남아 있음. 일본·전쟁 관련 미학을 활용한 광고에서 추가 주의 필요.</div></div>
+    <div class="hist-card"><div class="hist-date">선거 기간<br>(5년 주기)</div><div><div class="hist-event">총선 기간 — 딥페이크·AI 광고 절대 금지 구간</div><div class="hist-desc">2024년 10월 신법으로 선거 후보자 관련 AI 생성·조작 광고 전면 금지. 브랜드 광고가 의도치 않게 특정 후보·정당 이미지와 연결되면 법적 책임 발생 가능.</div></div><div class="hist-note">선거 기간 중 정치적으로 중립적인 표현 유지가 더욱 중요. 인물 이미지·AI 생성 콘텐츠 집행 시 법률 검토 필수.</div></div>
+  </div>
+
+  <div class="sub-title">실제 제재 사례</div>
+  <div class="case-grid">
+    <div class="case-card"><div><div class="case-title">인종 불균형 광고 반발 (반복 사례)</div><div class="case-body">글로벌 브랜드가 싱가포르 캠페인에 중국계 캐릭터만 집중 캐스팅. 말레이·인도계 커뮤니티에서 SNS 비판 확산. 인종화합법 신설(2024)로 향후 법적 리스크로 격상될 수 있는 영역.</div></div><span class="case-verdict v-warn">SNS 비판 · 공식 입장 발표 압박</span></div>
+    <div class="case-card"><div><div class="case-title">PDPC 개인정보 무동의 광고 타겟팅 제재 (반복)</div><div class="case-body">Meta 리드광고 등 제3자 플랫폼 활용 타겟팅에서 명시적 동의 메커니즘 미비. PDPC가 여러 브랜드에 과징금 부과. 최대 SGD 100만 벌금 선례.</div></div><span class="case-verdict v-fine">과징금 · 광고 집행 방식 재설계</span></div>
+    <div class="case-card"><div><div class="case-title">선거 후보자 딥페이크 광고 금지 (2024)</div><div class="case-body">2024년 10월 선거법 개정으로 선거 후보자의 AI 생성·딥페이크 이미지를 포함한 광고 전면 금지. 브랜드가 선거 이슈와 연계된 광고 집행 시 의도치 않은 위반 가능.</div></div><span class="case-verdict v-ban">IMDA 삭제 명령권 발동 가능</span></div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     SECTION 8 : 미국
+══════════════════════════════════════════════ -->
+<section class="section" id="tab-us">
+  <div class="country-hero" data-flag="🇺🇸">
+    <div class="country-flag">🇺🇸</div>
+    <div class="country-info">
+      <h2>미국 (United States of America)</h2>
+      <div class="regulators">FTC · NAD (BBB National Programs) · CARU · FTC Green Guides · FTC Endorsement Guides (2023 개정)</div>
+      <p class="country-tagline">세계 최고 개인주의(IDV=91) 시장. 2024년 FTC Operation AI Comply, 가짜 리뷰 금지 최종 규칙, 그린워싱 강화가 동시에 시행된 규제 격변기. 다양성 세탁과 인플루언서 미공시에 대한 소비자 소송이 집단화되는 추세.</p>
+      <div class="hofstede-bar">
+        <div class="hof-chip">개인주의 IDV <span>91</span></div>
+        <div class="hof-chip">인덜전스 IVR <span>68</span></div>
+        <div class="hof-chip">불확실성 회피 UAI <span>46</span></div>
+        <div class="hof-chip">남성성 MAS <span>62</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sub-title">핵심 규제 기관</div>
+  <div class="reg-wrap">
+    <table class="reg-table">
+      <thead><tr><th>기관명</th><th>역할</th><th>주요 집행 수단</th></tr></thead>
+      <tbody>
+        <tr><td>FTC (연방거래위원회)</td><td>연방 광고 규제의 최고 집행 기관. FTC법 제5조 기반</td><td>2024년 8월 가짜 리뷰 금지 최종 규칙 발효. 2024년 9월 'Operation AI Comply' 시행. 위반 시 민사 과징금</td></tr>
+        <tr><td>NAD (전국광고심의위원회)</td><td>전국 광고 진실성·정확성 자율심의. ICAS 미국 회원기관</td><td>FTC·FDA·EPA·주 검찰 이관 권한 보유. 소셜 플랫폼과 직접 협약으로 광고 제거 명령 가능</td></tr>
+        <tr><td>FTC Green Guides</td><td>환경 마케팅 주장 기준 지침</td><td>캘리포니아 2024년 '환경 광고 진실법' 등 주법과 연계 강화. FTC 법적 강제력 부여 검토 중</td></tr>
+        <tr><td>FTC Endorsement Guides (2023 개정)</td><td>인플루언서·셀럽 보증 광고 공시 의무. AI 생성 인플루언서 포함으로 확대</td><td>'명확하고 눈에 잘 띄는' 공시 의무. 플랫폼 자체 도구만으로 불충분. 미공시 시 집단 소송 위험</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="sub-title">문화적 지뢰 포인트</div>
+  <div class="pit-grid">
+    <div class="pit-card ban"><span class="pit-icon">🚫</span><div class="pit-body"><div class="pit-name">다양성 세탁 (Diversity Washing)</div><div class="pit-desc">인구통계학적 박스 채우기식 캐스팅이 SNS에서 즉각 '퍼포머티브 다이버시티'로 지목됨. 장애인·소수 인종·LGBTQ+를 이야기와 연관 없이 배치하는 구도가 오히려 브랜드 신뢰를 훼손.</div></div><span class="pit-tag">NAD 사회 고정관념 가이드라인 · WARC</span></div>
+    <div class="pit-card ban"><span class="pit-icon">🚫</span><div class="pit-body"><div class="pit-name">AI 워싱 (AI 기능 과장)</div><div class="pit-desc">FTC 2024년 'Operation AI Comply' — AI 기능 과장 주장에 집중 단속. 'AI 탑재', 'AI 강화' 등 실증 없는 표현 금지. DoNotPay '세계 최초 로봇 변호사' 사례가 대표적 집행 선례.</div></div><span class="pit-tag">FTC Operation AI Comply 2024</span></div>
+    <div class="pit-card ban"><span class="pit-icon">🚫</span><div class="pit-body"><div class="pit-name">가짜 리뷰·허위 추천</div><div class="pit-desc">2024년 8월 FTC 최종 규칙 발효: 가짜 소비자 리뷰, 내부자 리뷰 미공시, 리뷰 억압 전면 금지. 위반 시 건당 민사 과징금.</div></div><span class="pit-tag">FTC 가짜 리뷰 금지 최종 규칙 2024</span></div>
+    <div class="pit-card ban"><span class="pit-icon">🚫</span><div class="pit-body"><div class="pit-name">인플루언서 미공시</div><div class="pit-desc">FTC 2023 개정 보증 가이드 집행. AI 생성 인플루언서·합성 추천인도 포함. 플랫폼 자체 도구만으로 불충분. 미공시 발견 시 소비자 집단 소송 위험 급증.</div></div><span class="pit-tag">FTC Endorsement Guides 2023 · 집단소송 사례</span></div>
+    <div class="pit-card warn"><span class="pit-icon">⚠️</span><div class="pit-body"><div class="pit-name">그린워싱</div><div class="pit-desc">FTC Green Guides 근거로 소비자 소송 급증. 캘리포니아 2024년 환경 광고 진실법 신설. '지속가능', '탄소중립', '친환경' 등 주장 모두 독립 인증 근거 필요.</div></div><span class="pit-tag">FTC Green Guides · 캘리포니아법 2024</span></div>
+    <div class="pit-card warn"><span class="pit-icon">⚠️</span><div class="pit-body"><div class="pit-name">정치·사회 이슈 과도한 관여</div><div class="pit-desc">총기 규제, 낙태, 투표권 등 고도 분열 이슈에 브랜드 입장 표명 시 좌우 양측 불매운동 동시 위험. 주별 정치 지형에 따른 차별화 반응 발생.</div></div><span class="pit-tag">WARC 미국 시장 데이터 · 소셜 모니터링</span></div>
+  </div>
+
+  <div class="hist-section-label">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+    역사적 지뢰 날짜 및 사건
+  </div>
+  <div class="hist-grid">
+    <div class="hist-card"><div class="hist-date">9월 11일<br>9/11</div><div><div class="hist-event">2001년 9·11 테러 기념일</div><div class="hist-desc">브랜드의 9/11 마케팅은 매년 강한 반발. AT&T 스마트폰 광고, Walmart·Coca-Cola 쌍둥이 빌딩 진열 광고 등 다수 사례. '절대 광고에 활용해서는 안 되는 날'로 소비자 인식 고착.</div></div><div class="hist-note">Fast Company: "9/11은 브랜드가 기억해야 하지만, 광고에 사용하지 말아야 하는 날." 매년 반복되는 브랜드 실수의 대표 유형.</div></div>
+    <div class="hist-card"><div class="hist-date">12월 7일<br>Pearl Harbor Day</div><div><div class="hist-event">1941년 진주만 공격 기념일</div><div class="hist-desc">SpaghettiOs가 웃는 캐릭터 이미지로 기념일을 마케팅해 즉각 삭제. 군사적 비극을 소비재 마케팅에 활용하는 모든 시도가 동일 패턴의 반발을 유발.</div></div><div class="hist-note">SpaghettiOs (2013) 선례: 기념일 이미지에 마스코트를 넣는 것만으로도 즉각적인 브랜드 타격 발생. 비극적 군사 기념일 마케팅의 국제 표준 '하지 말아야 할 사례'로 기록.</div></div>
+    <div class="hist-card"><div class="hist-date">5월 마지막 월요일<br>Memorial Day</div><div><div class="hist-event">전몰장병 기념일</div><div class="hist-desc">전통적으로 세일·소비재 마케팅의 시작점으로 사용돼 왔으나, 군인 가족·참전용사 커뮤니티에서 '순국 군인을 할인 마케팅에 이용한다'는 비판이 지속적으로 제기됨.</div></div><div class="hist-note">Memorial Day 세일은 관행이지만, 전몰 이미지나 군인 이미지를 직접 연결하면 반발 유발. '여름 시작'의 맥락으로만 활용하고 전몰 의미는 건드리지 않는 것이 안전.</div></div>
+    <div class="hist-card"><div class="hist-date">6월 19일<br>Juneteenth</div><div><div class="hist-event">노예해방 기념일 (2021년 연방 공휴일 지정)</div><div class="hist-desc">아프리카계 미국인의 노예 해방을 기리는 날. 최근 공휴일로 지정되면서 브랜드들이 상업적으로 활용하려다 반발 급증. 흑인 커뮤니티의 역사적 트라우마를 상업화로 소비하는 것에 대한 강한 거부감.</div></div><div class="hist-note">2021~2023년 다수 브랜드가 Juneteenth 테마 제품·이벤트를 출시했다가 철수. '역사 상업화' 비판이 주요 반발 메커니즘.</div></div>
+    <div class="hist-card"><div class="hist-date">1월 6일<br>(최근 민감 날짜)</div><div><div class="hist-event">2021년 국회의사당 습격 사태</div><div class="hist-desc">정치적으로 극도로 분열된 날짜. 어떠한 브랜드 콘텐츠도 이 날짜와 연결되면 양측 모두에서 공격받을 위험. 정치 중립성이 최우선인 브랜드에게 완전 회피 원칙 권고.</div></div><div class="hist-note">미국 정치 양극화의 상징적 날짜. 브랜드의 '침묵'이 가장 안전한 선택인 몇 안 되는 날 중 하나.</div></div>
+  </div>
+
+  <div class="sub-title">실제 제재 사례</div>
+  <div class="case-grid">
+    <div class="case-card"><div><div class="case-title">FTC Operation AI Comply (2024년 9월)</div><div class="case-body">FTC가 AI 기능을 과장 주장한 기업들을 대상으로 법집행 스윕(Sweep) 시행. DoNotPay '세계 최초 로봇 변호사' 주장으로 제재. AI 기반 제품·기능 광고의 실증 기준이 대폭 강화됨.</div></div><span class="case-verdict v-ban">민사 제재 · AI 주장 광고 기준 전면 강화</span></div>
+    <div class="case-card"><div><div class="case-title">FTC 가짜 리뷰·추천 금지 규칙 발효 (2024년 10월)</div><div class="case-body">허위 소비자 리뷰, 내부자 리뷰 미공시, 리뷰 억압, 소셜 미디어 팔로워 구매 등 전면 금지. 위반 시 건당 민사 과징금. 브랜드가 의뢰한 인플루언서 리뷰에도 동일 적용.</div></div><span class="case-verdict v-fine">최초 민사 과징금 사례 축적 중</span></div>
+    <div class="case-card"><div><div class="case-title">Celsius, Revolve, Shein 인플루언서 집단 소송 (2023~25)</div><div class="case-body">유료 인플루언서 협업 미공시에 소비자 집단 소송 제기. FTC Act·주 소비자보호법 동시 위반 주장. 인플루언서 개인도 피고로 포함됨.</div></div><span class="case-verdict v-warn">집단 소송 · 합의금 지급 사례 증가</span></div>
+    <div class="case-card"><div><div class="case-title">AT&T 9/11 스마트폰 광고</div><div class="case-body">9/11 기념일에 스마트폰으로 추모 조명을 촬영한 이미지를 'Never forget' 캡션과 함께 게시. 즉각적인 반발로 삭제 후 공개 사과. 매년 반복되는 기념일 마케팅 실수의 대표 선례.</div></div><span class="case-verdict v-ban">즉시 삭제 · 공개 사과</span></div>
+    <div class="case-card"><div><div class="case-title">Walmart·Coca-Cola 9/11 쌍둥이 빌딩 진열 (2016)</div><div class="case-body">플로리다 Walmart 매장에서 코크 박스를 쌍둥이 빌딩 모양으로 진열하고 'We Will Never Forget' + 세일 표지판을 동시 부착. 즉각적인 전국 언론 보도 및 브랜드 비판.</div></div><span class="case-verdict v-ban">즉시 철거 · 전국 언론 비판</span></div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     SECTION 9 : 체크리스트
+══════════════════════════════════════════════ -->
+<section class="section" id="tab-chk">
+  <div class="sub-title" style="margin-top:0">캠페인 론칭 전 4단계 소스 활용 체크리스트</div>
+  <div class="chk-grid">
+    <div class="chk-col">
+      <div class="chk-col-head" style="color:var(--gold)">① KOTRA — 현지 맥락</div>
+      <div class="chk-item"><span class="chk-check" style="color:var(--gold)">✓</span>국가별 진출전략 보고서로 소비자 감수성·상관습 확인</div>
+      <div class="chk-item"><span class="chk-check" style="color:var(--gold)">✓</span>해외시장뉴스에서 최근 규제 변화 모니터링</div>
+      <div class="chk-item"><span class="chk-check" style="color:var(--gold)">✓</span>현지 무역관에 소재 사전 비공식 문의 가능</div>
+      <div class="chk-item"><span class="chk-check" style="color:var(--gold)">✓</span>지역·계층·세대별 소비자 분화 여부 확인 (특히 브라질·인도)</div>
+    </div>
+    <div class="chk-col">
+      <div class="chk-col-head" style="color:var(--teal)">② ICAS — 자율심의</div>
+      <div class="chk-item"><span class="chk-check" style="color:var(--teal)">✓</span>해당 국가 SRO(ASA·ARPP·CONAR·KARB·JARO·ASCI·ASAS·NAD) 사전 심의</div>
+      <div class="chk-item"><span class="chk-check" style="color:var(--teal)">✓</span>ICAS 2025 Global SRO Factbook으로 규제 체계 확인</div>
+      <div class="chk-item"><span class="chk-check" style="color:var(--teal)">✓</span>인플루언서 광고: WFA·ICAS 글로벌 가이던스 기준 적용</div>
+      <div class="chk-item"><span class="chk-check" style="color:var(--teal)">✓</span>AI 생성 소재: ICAS AI 투명성 모범사례 가이던스 준수</div>
+    </div>
+    <div class="chk-col">
+      <div class="chk-col-head" style="color:var(--red)">③ Chambers 등 — 법률검토</div>
+      <div class="chk-item"><span class="chk-check" style="color:var(--red)">✓</span>현지 광고법 전문 로컬 법률팀 최종 검토</div>
+      <div class="chk-item"><span class="chk-check" style="color:var(--red)">✓</span>프랑스: 투봉법 번역 의무 및 상표 등록 여부 확인</div>
+      <div class="chk-item"><span class="chk-check" style="color:var(--red)">✓</span>GDPR/LGPD/PDPA/PIPA 디지털 타겟 개인정보 처리 동의 확인</div>
+      <div class="chk-item"><span class="chk-check" style="color:var(--red)">✓</span>카테고리별 특수 규제(주류·금융·의료·도박) 확인</div>
+    </div>
+    <div class="chk-col">
+      <div class="chk-col-head" style="color:var(--accent)">④ WARC — 전략 검증</div>
+      <div class="chk-item"><span class="chk-check" style="color:var(--accent)">✓</span>유사 캠페인 성공·실패 케이스 스터디 검토</div>
+      <div class="chk-item"><span class="chk-check" style="color:var(--accent)">✓</span>WARC Rankings에서 현지 수상 크리에이티브 분석</div>
+      <div class="chk-item"><span class="chk-check" style="color:var(--accent)">✓</span>해당 시장 소비자 문화·반응 데이터 벤치마크</div>
+      <div class="chk-item"><span class="chk-check" style="color:var(--accent)">✓</span>캠페인 후 효과 데이터 WARC 케이스로 등재 검토</div>
+    </div>
+  </div>
+
+  <div class="sub-title">역사적 지뢰 날짜 공통 검토 원칙</div>
+  <div class="callout-box">
+    <div class="callout-head">🔥 스타벅스 '탱크데이' 사태가 보여준 3중 연상 메커니즘</div>
+    <p>역사적 사건과 광고의 충돌은 단순히 '날짜가 겹쳤다'는 문제가 아닙니다. 스타벅스 사태는 <strong>①날짜(5월 18일) + ②단어(탱크) + ③카피 어휘('책상에 탁!')</strong>가 결합해 삼중 연상 구조를 형성했고, 이것이 수십만 명의 집단 기억과 충돌해 불매운동으로 이어진 사례입니다.</p>
+    <div class="quote">광고의 모든 요소—날짜, 이미지, 색상, 단어, 숫자, 제품명—가 역사적 사건과 연상 관계를 형성할 수 있습니다. '의도하지 않은 연상'이 '의도한 연상'과 동일한 피해를 줍니다.</div>
+    <p>론칭 전 반드시 확인하세요: ① 집행 날짜가 해당 국가의 국가적 트라우마 날짜와 겹치는가? ② 광고 카피·제품명·이미지가 역사적 사건의 어휘·시각 기억을 연상시키는가? ③ 날짜·어휘·이미지 중 2개 이상이 동시에 결합될 가능성이 있는가?</p>
+  </div>
+
+  <div class="hist-grid">
+    <div class="hist-card"><div class="hist-date">전 국가 공통</div><div><div class="hist-event">전쟁·학살·독재·탄압 관련 기념일</div><div class="hist-desc">모든 국가에서 국가적 트라우마와 연관된 날짜 전후 광고 집행 시 현지 마케팅 팀 또는 KOTRA 무역관에 사전 확인 필수. 날짜뿐 아니라 광고 어휘·이미지의 연상 구조까지 검토.</div></div><div class="hist-note">도구: KOTRA 해외시장뉴스 국가별 연간 기념일 캘린더 + Google Trends로 해당 날짜 검색량 급증 여부 확인.</div></div>
+    <div class="hist-card"><div class="hist-date">AI 생성 콘텐츠</div><div><div class="hist-event">고인·실존 인물 AI 재현 리스크</div><div class="hist-desc">프랑스: 'virtual images' 법적 표기 의무. 브라질: VW/엘리스 헤지나 선례 이후 공개 의무 기준 강화. 한국·일본·미국: 법적 의무 미확립이나 소비자 신뢰 리스크 높음.</div></div><div class="hist-note">ICAS AI 투명성 모범사례 가이던스 (2025년 발표)를 전 시장에 공통 기준으로 적용 권장.</div></div>
+    <div class="hist-card"><div class="hist-date">인플루언서 공시</div><div><div class="hist-event">전 국가 공시 의무 강화 추세</div><div class="hist-desc">프랑스(Loi Influenceurs), 한국(KFTC), 일본(CAA/AUPMR), 인도(ASCI/IIGC), 싱가포르(ASAS), 미국(FTC) 모두 2023~2025년 사이 인플루언서 공시 기준을 강화 또는 법제화.</div></div><div class="hist-note">WFA·ICAS 글로벌 인플루언서 마케팅 가이던스 (2025년 4월)가 8개국 공통 기준선. 국가별 추가 요건을 그 위에 얹는 구조.</div></div>
+  </div>
+</section>
+
+</main>
+
+<script>
+const tabs = document.querySelectorAll('.tab-btn');
+const sections = document.querySelectorAll('.section');
+tabs.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const id = btn.dataset.tab;
+    tabs.forEach(t => t.classList.remove('active'));
+    sections.forEach(s => s.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('tab-' + id).classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});
+</script>
+</body>
+</html>
